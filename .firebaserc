@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "stevewitmandotcom": {
+      "hosting": {
+        "stevewitmandotcom": [
+          "stevewitmandotcom"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "stevewitmandotcom"
+  }
+}

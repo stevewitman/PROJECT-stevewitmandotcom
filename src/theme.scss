@@ -1,0 +1,11 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$sw-primary: mat.define-palette(mat.$cyan-palette, A700);
+$sw-accent: mat.define-palette(mat.$yellow-palette, A700);
+$sw-warn: mat.define-palette(mat.$orange-palette, A700);
+
+$sw-theme: mat.define-light-theme((color: (primary: $sw-primary, warn: $sw-warn, accent: $sw-accent)));
+
+@include mat.all-component-themes($sw-theme);

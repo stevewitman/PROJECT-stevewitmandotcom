@@ -1,0 +1,112 @@
+<mat-toolbar class="main-toolbar">
+  <ng-container *ngIf="!drawer.opened">
+    <button
+      type="button"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      (click)="drawer.toggle()"
+    >
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+  </ng-container>
+  <ng-container *ngIf="drawer.opened">
+    <button
+      class="menu-close"
+      type="button"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      (click)="drawer.toggle()"
+    >
+      <mat-icon aria-label="Side nav toggle icon">menu_open</mat-icon>
+    </button>
+  </ng-container>
+  <span class="spacer"></span>
+
+    <!-- AUTH -->
+  <app-auth-status
+    [isHandset$]="isHandset$"
+    [userAuthStatus$]="userAuthStatus$"
+    (signInWithGoogle)="signInWithGoogle()"
+    (signOutWithGoogle)="signOutWithGoogle()"
+  ></app-auth-status>
+</mat-toolbar>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    >
+    <mat-nav-list>
+      <a
+        mat-list-item
+        [routerLink]="['/']"
+        (click)="isHandset && drawer.close()"
+        routerLinkActive="link-active"
+        ><span class="menu-item">Contact</span></a
+      >
+      <a
+        mat-list-item
+        
+        (click)="isHandset && drawer.close()"
+        routerLinkActive="link-active"
+        ><span class="menu-item">Projects</span></a
+      >
+      <a
+        mat-list-item
+        
+        (click)="isHandset && drawer.close()"
+        routerLinkActive="link-active"
+        ><span class="menu-item">Videos</span></a
+      >
+      <a
+        mat-list-item
+        
+        (click)="isHandset && drawer.close()"
+        routerLinkActive="link-active"
+        ><span class="menu-item">Articles</span></a
+      >
+      <a
+        mat-list-item
+        
+        (click)="isHandset && drawer.close()"
+        routerLinkActive="link-active"
+        ><span class="menu-item">Presentations</span></a
+      >
+      <a
+        mat-list-item
+        
+        (click)="isHandset && drawer.close()"
+        routerLinkActive="link-active"
+        ><span class="menu-item">Volunteer</span></a
+      >
+      <a
+        mat-list-item
+        
+        (click)="isHandset && drawer.close()"
+        routerLinkActive="link-active"
+        ><span class="menu-item">About</span></a
+      >
+      <a
+        mat-list-item 
+        
+        (click)="isHandset && drawer.close()"
+        routerLinkActive="link-active"
+        ><span class="menu-item">Resume</span></a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <!-- Main Content Area -->
+    <div
+      class="page-container"
+      [ngClass]="{ 'page-container-handset': isHandset }"
+      [@routeAnimations]="prepareRoute(outlet)"
+    >
+      <router-outlet #outlet="outlet"></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
