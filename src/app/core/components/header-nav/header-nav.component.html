@@ -22,7 +22,7 @@
   </ng-container>
   <span class="spacer"></span>
 
-    <!-- AUTH -->
+  <!-- AUTH -->
   <app-auth-status
     [isHandset$]="isHandset$"
     [userAuthStatus$]="userAuthStatus$"
@@ -37,64 +37,83 @@
     fixedInViewport
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    >
+  >
     <mat-nav-list>
       <a
         mat-list-item
-        [routerLink]="['/']"
         (click)="isHandset && drawer.close()"
         routerLinkActive="link-active"
-        ><span class="menu-item">Contact</span></a
+        ><span class="menu-item">SideNav links will be completed on July 28th.</span></a
       >
-      <a
+            <a
         mat-list-item
-        
+        (click)="isHandset && drawer.close()"
+        routerLinkActive="link-active"
+        ><span class="menu-item">...</span></a
+      >
+            <a
+        mat-list-item
+        (click)="isHandset && drawer.close()"
+        routerLinkActive="link-active"
+        ><span class="menu-item">As of July 26th, there are no active links on this site except for the Social Icons</span></a
+      >
+      
+      <!-- <a
+        mat-list-item
         (click)="isHandset && drawer.close()"
         routerLinkActive="link-active"
         ><span class="menu-item">Projects</span></a
-      >
-      <a
+      > -->
+      <!-- <a
         mat-list-item
-        
         (click)="isHandset && drawer.close()"
         routerLinkActive="link-active"
-        ><span class="menu-item">Videos</span></a
-      >
-      <a
+        ><span class="menu-item">Mentoring</span></a
+      > -->
+      <!-- <a
         mat-list-item
-        
-        (click)="isHandset && drawer.close()"
-        routerLinkActive="link-active"
-        ><span class="menu-item">Articles</span></a
-      >
-      <a
-        mat-list-item
-        
-        (click)="isHandset && drawer.close()"
-        routerLinkActive="link-active"
-        ><span class="menu-item">Presentations</span></a
-      >
-      <a
-        mat-list-item
-        
         (click)="isHandset && drawer.close()"
         routerLinkActive="link-active"
         ><span class="menu-item">Volunteer</span></a
-      >
-      <a
+      > -->
+
+      <!-- <a
+      mat-list-item
+      (click)="isHandset && drawer.close()"
+      routerLinkActive="link-active"
+      ><span class="menu-item">Videos</span></a
+      > -->
+      <!-- <a
+      mat-list-item
+      (click)="isHandset && drawer.close()"
+      routerLinkActive="link-active"
+      ><span class="menu-item">Articles</span></a
+      > -->
+      <!-- <a
         mat-list-item
-        
         (click)="isHandset && drawer.close()"
         routerLinkActive="link-active"
-        ><span class="menu-item">About</span></a
-      >
-      <a
-        mat-list-item 
-        
+        ><span class="menu-item">Presentations</span></a
+      > -->
+
+      <!-- <a
+      mat-list-item
+      (click)="isHandset && drawer.close()"
+      routerLinkActive="link-active"
+      ><span class="menu-item">About</span></a
+      > -->
+      <!-- <a
+      mat-list-item
+      (click)="isHandset && drawer.close()"
+      routerLinkActive="link-active"
+      ><span class="menu-item">Contact</span></a
+      > -->
+      <!-- <a
+        mat-list-item
         (click)="isHandset && drawer.close()"
         routerLinkActive="link-active"
         ><span class="menu-item">Resume</span></a
-      >
+      > -->
     </mat-nav-list>
   </mat-sidenav>
 
@@ -109,4 +128,3 @@
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
-

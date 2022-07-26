@@ -1,4 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --color-primary: #00B8D4;
+  --color-accent: #FFD600;
+  --color-warn: #FF6D00;
+  --color-red: #CB2B39;
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+  --color-gray-100: #333;
+  --color-gray-100: #333;
+  --color-gray-100: #333;
+  --color-gray-100: #333;
+  --color-gray-100: #333;
+  --color-gray-100: #333;
+  --color-gray-100: #333;
+  --color-gray-100: #333;
+  --color-gray-100: #333;
+}
+// CSS Reset
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  background-color: #EEEEEE;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}

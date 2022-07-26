@@ -1,0 +1,249 @@
+<div class="page-container-wide">
+  <div class="banner">
+    <img src="./assets/images/sw-banner.jpg" alt="" />
+  </div>
+  <section class="section hero">
+    <h1 class="hero-title">Steve Witman</h1>
+    <h3 class="hero-subtitle">Software Engineer | Angular Specialist</h3>
+    <div *ngIf="showEmail">
+      <h3 class="email">stevewitman@gmail.com</h3>
+    </div>
+    <div class="social">
+      <a href="https://www.linkedin.com/in/stevewitman/" target="_blank">
+        <div class="social-cell">
+          <i class="fa fa-linkedin"></i>
+        </div>
+      </a>
+      <a href="https://github.com/stevewitman" target="_blank">
+        <div class="social-cell">
+          <i class="fa fa-github"></i>
+        </div>
+      </a>
+      <a href="https://twitter.com/stevewitman" target="_blank">
+        <div class="social-cell">
+          <i class="fa fa-twitter"></i>
+        </div>
+      </a>
+      <a href="https://www.meetup.com/angularboulder/" target="_blank">
+        <div class="social-cell">
+          <i class="fa fa-meetup"></i>
+        </div>
+      </a>
+      <a
+        href="https://www.youtube.com/channel/UCi1CJ7oOQjAMh6-4YqZ7hyw"
+        target="_blank"
+      >
+        <div class="social-cell">
+          <i class="fa fa-youtube social-icon"></i>
+        </div>
+      </a>
+      <div class="link" (click)="toggleEmail()">
+        <div class="social-cell">
+          <i class="fa fa-envelope"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- <section class="section section-dark">
+    <h2>Index</h2>
+    <app-index></app-index>
+  </section> -->
+
+  <!-- PROJECTS SECTION -->
+  <section class="section section-dark">
+    <h2 class="section-title">Projects</h2>
+    <div class="container-flex-2">
+      <mat-card class="summary-card card-dark">
+        <h3 class="card-title">Latest Angular Blogs & Videos</h3>
+        <h4 class="card-subtitle">
+          ngnuggets.com <span class="accent">(coming in August)</span>
+        </h4>
+        <img class="card-image" src="assets/images/PROJ-ngnuggetsdotcom.png" />
+      </mat-card>
+      <mat-card class="summary-card card-dark">
+        <h3 class="card-title">My Personal Website</h3>
+        <h4 class="card-subtitle">stevewitman.com</h4>
+        <img
+          class="card-image"
+          src="assets/images/PROJ-stevewitmandotcom.png"
+        />
+      </mat-card>
+    </div>
+  </section>
+  <section class="section section-light">
+    <h2 class="section-title">Pairing & Mentoring</h2>
+    <h5 class="card-subtitle coming-soon">(coming - Spring '23)</h5>
+  </section>
+  <!-- VOLUNTEER / COMMUNITY SECTION -->
+  <section class="section section-dark">
+    <h2 class="section-title">Volunteer / Community</h2>
+    <div class="container-flex-2">
+      <mat-card class="summary-card card-dark">
+        <h3 class="card-title">Founder & Organizer</h3>
+        <h4 class="card-subtitle">Angular Boulder Meetup</h4>
+        <h5 class="card-date">2017 - Present</h5>
+        <img
+          class="card-image"
+          src="assets/images/VOL-angularboulder-meetup.png"
+        />
+      </mat-card>
+      <mat-card class="summary-card card-dark">
+        <h3 class="card-title">Co-Host</h3>
+        <h4 class="card-subtitle">Angular Nation Beginners Channel</h4>
+        <h5 class="card-date">2022 - Present</h5>
+        <img class="card-image" src="assets/images/VOL-angular-nation.png" />
+      </mat-card>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <h2 class="section-title">Videos</h2>
+    <h5 class="card-subtitle coming-soon">(Coming - Fall '22)</h5>
+  </section>
+  <section class="section section-dark">
+    <h2 class="section-title">Articles</h2>
+    <h5 class="card-subtitle coming-soon">(Coming - Fall '22)</h5>
+  </section>
+  <section class="section section-light">
+    <h2 class="section-title">Presentations</h2>
+    <div class="container-flex">
+      <mat-card class="summary-card card-light mat-elevation-z0">
+        <h3 class="card-title">Angular Dynamic Components</h3>
+        <h4 class="card-subtitle darker">Angular Boulder Meetup</h4>
+        <h5 class="card-date">June '22</h5>
+        <img
+          class="card-image"
+          src="assets/images/2022-06-14 Angular Dynamically Loading Components (ABM).jpg"
+        />
+      </mat-card>
+      <mat-card class="summary-card card-light mat-elevation-z0">
+        <h3 class="card-title">Angular Change Detection</h3>
+        <h4 class="card-subtitle darker">Angular Boulder Meetup</h4>
+        <h5 class="card-date">April '22</h5>
+        <img
+          class="card-image"
+          src="assets/images/2022-04-12 Angular Change Detection (ABM).jpg"
+        />
+      </mat-card>
+      <mat-card class="summary-card card-light mat-elevation-z0">
+        <h3 class="card-title">Angular Custom Pipes</h3>
+        <h4 class="card-subtitle darker">Angular Boulder Meetup</h4>
+        <h5 class="card-date">March '22</h5>
+        <img
+          class="card-image"
+          src="assets/images/2022-03-08 Angular Custom Pipes (ABM).jpg"
+        />
+      </mat-card>
+      <mat-card class="summary-card card-light mat-elevation-z0">
+        <h3 class="card-title">Angular Custom Directives</h3>
+        <h4 class="card-subtitle darker">Angular Boulder Meetup</h4>
+        <h5 class="card-date">February '22</h5>
+        <img
+          class="card-image"
+          src="assets/images/2022-02-08 Angular Custom Directives (ABM).jpg"
+        />
+      </mat-card>
+      <mat-card class="summary-card card-light mat-elevation-z0">
+        <h3 class="card-title">Angular Getting Started</h3>
+        <h4 class="card-subtitle darker">Angular Boulder Meetup</h4>
+        <h5 class="card-date">December '21</h5>
+        <img
+          class="card-image"
+          src="assets/images/2021-12-14 Angular Getting Started (ABM).jpg"
+        />
+      </mat-card>
+      <mat-card class="summary-card card-light mat-elevation-z0">
+        <h3 class="card-title">Angular The Framework</h3>
+        <h4 class="card-subtitle darker">Angular Boulder Meetup</h4>
+        <h5 class="card-date">November '21</h5>
+        <img
+          class="card-image"
+          src="assets/images/2021-11-09 Angular The Framework (ABM).jpg"
+        />
+      </mat-card>
+      <mat-card class="summary-card card-light mat-elevation-z0">
+        <h3 class="card-title">Observables In Angular Part 3</h3>
+        <h4 class="card-subtitle darker">Angular Boulder Meetup</h4>
+        <h5 class="card-date">September '21</h5>
+        <img
+          class="card-image"
+          src="assets/images/2021-09-14 Observables In Angular Part 3 (ABM).jpg"
+        />
+      </mat-card>
+      <mat-card class="summary-card card-light mat-elevation-z0">
+        <h3 class="card-title">Observables In Angular Part 2</h3>
+        <h4 class="card-subtitle darker">Angular Boulder Meetup</h4>
+        <h5 class="card-date">August '21</h5>
+        <img
+          class="card-image"
+          src="assets/images/2021-08-10 Observables In Angular Part 2 (ABM).jpg"
+        />
+      </mat-card>
+      <mat-card class="summary-card card-light mat-elevation-z0">
+        <h3 class="card-title">Observables In Angular Part 1</h3>
+        <h4 class="card-subtitle darker">Angular Boulder Meetup</h4>
+        <h5 class="card-date">July '21</h5>
+        <img
+          class="card-image"
+          src="assets/images/2021-07-13 Observables In Angular Part 1 (ABM).jpg"
+        />
+      </mat-card>
+      <mat-card class="summary-card card-light mat-elevation-z0">
+        <h3 class="card-title">Angular Animations</h3>
+        <h4 class="card-subtitle darker">Angular Boulder Meetup</h4>
+        <h5 class="card-date">May '21</h5>
+        <img
+          class="card-image"
+          src="assets/images/2021-05-11 Angular Animations (ABM).jpg"
+        />
+      </mat-card>
+      <mat-card class="summary-card card-light mat-elevation-z0">
+        <h3 class="card-title">Angular Custom Components</h3>
+        <h4 class="card-subtitle darker">Angular Boulder Meetup</h4>
+        <h5 class="card-date">April '21</h5>
+        <img
+          class="card-image"
+          src="assets/images/2021-04-13 Angular Custom Components (ABM).jpg"
+        />
+      </mat-card>
+      <mat-card class="summary-card card-light mat-elevation-z0">
+        <h3 class="card-title">The Angular Router</h3>
+        <h4 class="card-subtitle darker">Angular Boulder Meetup</h4>
+        <h5 class="card-date">March '21</h5>
+        <img
+          class="card-image"
+          src="assets/images/2021-03-09 The Angular Router (ABM).jpg"
+        />
+      </mat-card>
+      <mat-card class="summary-card card-light mat-elevation-z0">
+        <h3 class="card-title">Nx Workspaces With Angular</h3>
+        <h4 class="card-subtitle darker">Angular Boulder Meetup</h4>
+        <h5 class="card-date">February '21</h5>
+        <img
+          class="card-image"
+          src="assets/images/2021-02-09 Nx Workspaces With Angular (ABM).jpg"
+        />
+      </mat-card>
+      <mat-card class="summary-card card-light mat-elevation-z0">
+        <h3 class="card-title">Angular Architectural Considerations</h3>
+        <h4 class="card-subtitle darker">Angular Boulder Meetup</h4>
+        <h5 class="card-date">January '21</h5>
+        <img
+          class="card-image"
+          src="assets/images/2021-01-12 Angular Architectural Considerations (ABM).jpg"
+        />
+      </mat-card>
+    </div>
+  </section>
+
+  <!-- <section class="section section-dark">
+    <h2 class="section-title">About</h2>
+  </section> -->
+  <!-- <section class="section section-light">
+    <h2 class="section-title">Contact</h2>
+  </section> -->
+  <section class="section section-dark" #resume>
+    <h2 class="section-title">Resume</h2>
+    <app-resume></app-resume>
+  </section>
+</div>
