@@ -43,77 +43,74 @@
         mat-list-item
         (click)="isHandset && drawer.close()"
         routerLinkActive="link-active"
-        ><span class="menu-item">SideNav links will be completed on July 28th.</span></a
+        [routerLink]="['/home']"
+        ><span class="menu-item">Home</span></a
       >
-            <a
+      <a
         mat-list-item
         (click)="isHandset && drawer.close()"
         routerLinkActive="link-active"
-        ><span class="menu-item">...</span></a
-      >
-            <a
-        mat-list-item
-        (click)="isHandset && drawer.close()"
-        routerLinkActive="link-active"
-        ><span class="menu-item">As of July 26th, there are no active links on this site except for the Social Icons</span></a
-      >
-      
-      <!-- <a
-        mat-list-item
-        (click)="isHandset && drawer.close()"
-        routerLinkActive="link-active"
+        [routerLink]="['/projects']"
         ><span class="menu-item">Projects</span></a
-      > -->
-      <!-- <a
+      >
+      <a
         mat-list-item
         (click)="isHandset && drawer.close()"
         routerLinkActive="link-active"
+        [routerLink]="['/mentoring']"
         ><span class="menu-item">Mentoring</span></a
-      > -->
-      <!-- <a
+      >
+      <a
         mat-list-item
         (click)="isHandset && drawer.close()"
         routerLinkActive="link-active"
+        [routerLink]="['/volunteer']"
         ><span class="menu-item">Volunteer</span></a
-      > -->
+      >
 
-      <!-- <a
+      <a
       mat-list-item
       (click)="isHandset && drawer.close()"
       routerLinkActive="link-active"
+      [routerLink]="['/videos']"
       ><span class="menu-item">Videos</span></a
-      > -->
-      <!-- <a
+      >
+      <a
       mat-list-item
       (click)="isHandset && drawer.close()"
       routerLinkActive="link-active"
-      ><span class="menu-item">Articles</span></a
-      > -->
-      <!-- <a
+      [routerLink]="['/blog']"
+      ><span class="menu-item">Blog</span></a
+      >
+      <a
         mat-list-item
         (click)="isHandset && drawer.close()"
         routerLinkActive="link-active"
-        ><span class="menu-item">Presentations</span></a
-      > -->
+        [routerLink]="['/talks']"
+        ><span class="menu-item">Talks</span></a
+      >
 
-      <!-- <a
+      <a
       mat-list-item
       (click)="isHandset && drawer.close()"
       routerLinkActive="link-active"
+      [routerLink]="['/about']"
       ><span class="menu-item">About</span></a
-      > -->
-      <!-- <a
+      >
+      <a
       mat-list-item
       (click)="isHandset && drawer.close()"
       routerLinkActive="link-active"
+      [routerLink]="['/contact']"
       ><span class="menu-item">Contact</span></a
-      > -->
-      <!-- <a
+      >
+      <a
         mat-list-item
         (click)="isHandset && drawer.close()"
         routerLinkActive="link-active"
+        [routerLink]="['/resume']"
         ><span class="menu-item">Resume</span></a
-      > -->
+      >
     </mat-nav-list>
   </mat-sidenav>
 
