@@ -120,10 +120,6 @@ section {
   }
 }
 
-
-
-
-
 .banner {
   background-color: #171717;
   display: flex;
@@ -132,7 +128,8 @@ section {
   img {
     display: block;
     align-items: center;
-    width: 100vw;
+    width: auto;
+    height: auto;
     max-width: 1680px;
   }
 }
@@ -165,6 +162,12 @@ section {
     grid-template-columns: repeat(3, 1fr);
     gap: 48px;
   }
+}
+// Use container-flex-1 for exactly 1 items
+.container-flex-1 {
+  display: grid;
+  margin: auto;
+  justify-content: center;
 }
 // Use container-flex-2 for exactly 2 items
 .container-flex-2 {
@@ -262,4 +265,6 @@ section {
   }
 }
 
-
+  a:link.card-with-link {
+      text-decoration: none;
+    }

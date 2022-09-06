@@ -39,6 +39,8 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
   >
     <mat-nav-list>
+      <!-- close sidenav on click only if mobile otherwise leave open on desktop view
+       ... this is done with (click)="isHandset && drawer.close()" -->
       <a
         mat-list-item
         (click)="isHandset && drawer.close()"
@@ -46,50 +48,48 @@
         [routerLink]="['/home']"
         ><span class="menu-item">Home</span></a
       >
-      <a
+      <!-- <a
         mat-list-item
         (click)="isHandset && drawer.close()"
         routerLinkActive="link-active"
         [routerLink]="['/projects']"
         ><span class="menu-item">Projects</span></a
-      >
-      <a
+      > -->
+      <!-- <a
         mat-list-item
         (click)="isHandset && drawer.close()"
         routerLinkActive="link-active"
         [routerLink]="['/mentoring']"
         ><span class="menu-item">Mentoring</span></a
-      >
-      <a
+      > -->
+      <!-- <a
         mat-list-item
         (click)="isHandset && drawer.close()"
         routerLinkActive="link-active"
         [routerLink]="['/volunteer']"
         ><span class="menu-item">Volunteer</span></a
-      >
-
-      <a
+      > -->
+      <!-- <a
       mat-list-item
       (click)="isHandset && drawer.close()"
       routerLinkActive="link-active"
       [routerLink]="['/videos']"
       ><span class="menu-item">Videos</span></a
-      >
-      <a
+      > -->
+      <!-- <a
       mat-list-item
       (click)="isHandset && drawer.close()"
       routerLinkActive="link-active"
       [routerLink]="['/blog']"
       ><span class="menu-item">Blog</span></a
-      >
-      <a
+      > -->
+      <!-- <a
         mat-list-item
         (click)="isHandset && drawer.close()"
         routerLinkActive="link-active"
         [routerLink]="['/talks']"
         ><span class="menu-item">Talks</span></a
-      >
-
+      > -->
       <a
       mat-list-item
       (click)="isHandset && drawer.close()"
@@ -104,13 +104,13 @@
       [routerLink]="['/contact']"
       ><span class="menu-item">Contact</span></a
       >
-      <a
+      <!-- <a
         mat-list-item
         (click)="isHandset && drawer.close()"
         routerLinkActive="link-active"
         [routerLink]="['/resume']"
         ><span class="menu-item">Resume</span></a
-      >
+      > -->
     </mat-nav-list>
   </mat-sidenav>
 

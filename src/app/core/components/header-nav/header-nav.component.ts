@@ -83,10 +83,11 @@ export class HeaderNavComponent implements OnInit, AfterViewInit, OnDestroy {
       map((result) => result.matches),
       shareReplay()
     );
-  userAuthStatus$: Observable<User | null> = of(null);
-  isHandsetSubscription$: Subscription | null = null;
-
+  isHandsetSub$: Subscription | null = null;
+  
   isHandset!: boolean;
+  
+  userAuthStatus$: Observable<User | null> = of(null);
 
   constructor(
     private breakpointObserver: BreakpointObserver,
@@ -97,7 +98,7 @@ export class HeaderNavComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnInit() {
     // TODO handle subscription
-    this.isHandsetSubscription$ = this.isHandset$.subscribe((value) => {
+    this.isHandsetSub$ = this.isHandset$.subscribe((value) => {
       this.isHandset = value;
     });
     this.userAuthStatus$ = this.authService.getUserAuthState();
@@ -108,8 +109,8 @@ export class HeaderNavComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    if (this.isHandsetSubscription$) {
-      this.isHandsetSubscription$.unsubscribe();
+    if (this.isHandsetSub$) {
+      this.isHandsetSub$.unsubscribe();
     }
   }
 

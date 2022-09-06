@@ -1,6 +1,6 @@
 <div class="page-container-wide">
   <div class="banner">
-    <img src="./assets/images/sw-banner.jpg" alt="" />
+    <img src="assets/images/sw-banner.jpg" />
   </div>
   <section class="section hero">
     <h1 class="hero-title">Steve Witman</h1>
@@ -29,19 +29,22 @@
           <i class="fa fa-meetup"></i>
         </div>
       </a>
-      <a
+      <!-- <a
         href="https://www.youtube.com/channel/UCi1CJ7oOQjAMh6-4YqZ7hyw"
         target="_blank"
       >
         <div class="social-cell">
           <i class="fa fa-youtube social-icon"></i>
         </div>
-      </a>
-      <div class="link" (click)="toggleEmail()">
+      </a> -->
+      <!-- <div class="link" (click)="toggleEmail()">
         <div class="social-cell">
           <i class="fa fa-envelope"></i>
         </div>
-      </div>
+      </div> -->
+    </div>
+    <div>
+      <h3 class="email">stevewitman@gmail.com</h3>
     </div>
   </section>
   <!-- <section class="section section-dark">
@@ -53,21 +56,23 @@
   <section class="section section-dark">
     <h2 class="section-title">Projects</h2>
     <div class="container-flex-2">
-      <mat-card class="summary-card card-dark">
-        <h3 class="card-title">Latest Angular Blogs & Videos</h3>
-        <h4 class="card-subtitle">
-          ngnuggets.com <span class="accent">(coming in August)</span>
-        </h4>
-        <img class="card-image" src="assets/images/PROJ-ngnuggetsdotcom.png" />
-      </mat-card>
-      <mat-card class="summary-card card-dark">
-        <h3 class="card-title">My Personal Website</h3>
-        <h4 class="card-subtitle">stevewitman.com</h4>
-        <img
-          class="card-image"
-          src="assets/images/PROJ-stevewitmandotcom.png"
-        />
-      </mat-card>
+      <a href="https://ngnuggets.com" class="card-with-link">
+        <mat-card class="summary-card card-dark">
+          <h3 class="card-title">Latest Angular Blogs & Videos</h3>
+          <h4 class="card-subtitle">
+            ngnuggets.com <span class="accent">(MVP Aug 31, 2022)</span>
+          </h4>
+          <img class="card-image" src="assets/images/PROJ-ngnuggetsdotcom.png" />
+        </mat-card>
+      </a>
+        <mat-card class="summary-card card-dark">
+          <h3 class="card-title">My Personal Website</h3>
+          <h4 class="card-subtitle">stevewitman.com</h4>
+          <img
+            class="card-image"
+            src="assets/images/PROJ-stevewitmandotcom.png"
+          />
+        </mat-card>
     </div>
   </section>
   <section class="section section-light">
@@ -78,6 +83,7 @@
   <section class="section section-dark">
     <h2 class="section-title">Volunteer / Community</h2>
     <div class="container-flex-2">
+    <!-- <div class="container-flex-1"> -->
       <mat-card class="summary-card card-dark">
         <h3 class="card-title">Founder & Organizer</h3>
         <h4 class="card-subtitle">Angular Boulder Meetup</h4>
@@ -96,17 +102,52 @@
     </div>
   </section>
 
-  <section class="section section-light">
+  <!-- <section class="section section-light">
     <h2 class="section-title">Videos</h2>
     <h5 class="card-subtitle coming-soon">(Coming - Fall '22)</h5>
-  </section>
-  <section class="section section-dark">
+  </section> -->
+  <!-- <section class="section section-dark">
     <h2 class="section-title">Articles</h2>
     <h5 class="card-subtitle coming-soon">(Coming - Fall '22)</h5>
-  </section>
+  </section> -->
   <section class="section section-light">
     <h2 class="section-title">Presentations</h2>
-    <div class="container-flex">
+    <ul>
+      <li>Oct 2022 - Typed Forms in Angular 14</li>
+      <li>Sep 2022 - Angular URL Shortener</li>
+      <li>Jun 2022 - Angular Dynamic Components</li>
+      <li>Apr 2022 - Angular Change Detection</li>
+      <li>Mar 2022 - Angular Custom Pipes</li>
+      <li>Feb 2022 - Angular Custom Directives</li>
+      <li>Dec 2021 - Angular Getting Started</li>
+      <li>Nov 2021 - Angular The Framework</li>
+      <li>Sep 2021 - Observables In Angular Part 3</li>
+      <li>Aug 2021 - Observables In Angular Part 2</li>
+      <li>Jul 2021 - Observables In Angular Part 1</li>
+      <li>Apr 2021 - Angular Custom Components</li>
+      <li>Mar 2021 - The Angular Router</li>
+      <li>Feb 2021 - Nx Workspaces With Angular</li>
+      <li>Jab 2021 - Angular Architectural Considerations</li>
+    </ul>
+    <!-- <div class="container-flex">
+      <mat-card class="summary-card card-light mat-elevation-z0">
+        <h3 class="card-title">Angular URL Shortener</h3>
+        <h4 class="card-subtitle darker">Angular Boulder Meetup</h4>
+        <h5 class="card-date">UPCOMING ... September '22</h5>
+        <img
+          class="card-image"
+          src="assets/images/2022-09-13 Angular URL Shortener and ng-conf Recap (ABM).jpg"
+        />
+      </mat-card>
+      <mat-card class="summary-card card-light mat-elevation-z0">
+        <h3 class="card-title">Typed Forms in Angular 14</h3>
+        <h4 class="card-subtitle darker">Angular Boulder Meetup</h4>
+        <h5 class="card-date">UPCOMING ... October '22</h5>
+        <img
+          class="card-image"
+          src="assets/images/2022-10-10 Typed Forms in Angular 14 (ABM).jpg"
+        />
+      </mat-card>
       <mat-card class="summary-card card-light mat-elevation-z0">
         <h3 class="card-title">Angular Dynamic Components</h3>
         <h4 class="card-subtitle darker">Angular Boulder Meetup</h4>
@@ -233,7 +274,7 @@
           src="assets/images/2021-01-12 Angular Architectural Considerations (ABM).jpg"
         />
       </mat-card>
-    </div>
+    </div> -->
   </section>
 
   <!-- <section class="section section-dark">
@@ -242,8 +283,8 @@
   <!-- <section class="section section-light">
     <h2 class="section-title">Contact</h2>
   </section> -->
-  <section class="section section-dark" #resume>
+  <!-- <section class="section section-dark" #resume>
     <h2 class="section-title">Resume</h2>
     <app-resume></app-resume>
-  </section>
+  </section> -->
 </div>
