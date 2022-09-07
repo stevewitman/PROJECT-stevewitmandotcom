@@ -15,7 +15,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 // import { User } from '@angular/fire/auth';
@@ -89,11 +89,16 @@ export class HeaderNavComponent implements OnInit, AfterViewInit, OnDestroy {
   
   userAuthStatus$: Observable<User | null> = of(null);
 
+  isAdmin$: Observable<boolean> = of(false);
+
+  active$: any
+
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private router: Router,
     private changeDetectorRef: ChangeDetectorRef,
-    private authService: AuthService
+    private authService: AuthService,
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -102,8 +107,9 @@ export class HeaderNavComponent implements OnInit, AfterViewInit, OnDestroy {
       this.isHandset = value;
     });
     this.userAuthStatus$ = this.authService.getUserAuthState();
+    this.isAdmin$ = this.authService.isAdmin;
+    this.active$ = this.router
   }
-
   ngAfterViewInit() {
     this.changeDetectorRef.detectChanges();
   }
@@ -126,8 +132,7 @@ export class HeaderNavComponent implements OnInit, AfterViewInit, OnDestroy {
     this.authService
       .signInWithGoogle()
       .then(() => {
-        // Sign-out successful.
-        console.log('Signed In With Google');
+        // Sign-in successful.
       })
       .catch((error) => {
         // An error happened.
@@ -141,7 +146,6 @@ export class HeaderNavComponent implements OnInit, AfterViewInit, OnDestroy {
       .signOutWithGoogle()
       .then(() => {
         // Sign-out successful.
-        console.log('Signed Out With Google');
       })
       .catch((error) => {
         // An error happened.
@@ -149,4 +153,8 @@ export class HeaderNavComponent implements OnInit, AfterViewInit, OnDestroy {
         console.log('ERROR message:', error);
       });
   }
+
+  // activeRoute() {
+  //   console.log(this.activatedRoute.snapshot.url[0]);
+  // }
 }

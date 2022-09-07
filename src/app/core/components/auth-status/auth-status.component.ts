@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
+import { Observable, of, take, mergeMap } from 'rxjs';
 import { User } from '@angular/fire/auth';
-import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-auth-status',
@@ -14,11 +15,15 @@ export class AuthStatusComponent {
   @Output() signInWithGoogle = new EventEmitter<boolean>();
   @Output() signOutWithGoogle = new EventEmitter<boolean>();
 
+  constructor(private router: Router) {}
+
   onSignIn() {
     this.signInWithGoogle.emit(true);
   }
 
   onSignOut() {
     this.signOutWithGoogle.emit(true);
+    this.router.navigate([''])
   }
+
 }

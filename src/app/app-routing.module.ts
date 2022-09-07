@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminRouteGuard } from './core/services/admin-route.guard';
 
 const routes: Routes = [
   {
@@ -56,6 +57,12 @@ const routes: Routes = [
     path: 'volunteer',
     loadChildren: () =>
       import('./features/volunteer/volunteer.module').then((m) => m.VolunteerModule),
+  },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./features/admin/admin.module').then((m) => m.AdminModule),
+    canActivate: [AdminRouteGuard]
   },
 ];
 

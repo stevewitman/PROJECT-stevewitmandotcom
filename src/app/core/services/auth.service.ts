@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 
 import { Firestore, doc, setDoc } from '@angular/fire/firestore';
-import { Observable, of } from 'rxjs';
+import { map, Observable, of, Subscription, tap } from 'rxjs';
 
 import {
   Auth,
@@ -16,22 +16,46 @@ import {
 @Injectable({
   providedIn: 'root',
 })
-export class AuthService {
+export class AuthService implements OnDestroy {
   userAuthState$: Observable<User | null> = of(null);
+  subUserAuthState$: Subscription | null = null;
 
   constructor(private auth: Auth, private firestore: Firestore) {
     this.userAuthState$ = authState(this.auth);
+  }
+
+  ngOnDestroy(): void {
+    this.subUserAuthState$?.unsubscribe()
   }
 
   getUserAuthState() {
     return this.userAuthState$;
   }
 
+  get isAdmin(): Observable<boolean> {
+    return this.userAuthState$.pipe(
+      map((user) => {
+        if (user?.email === 'stevewitman@gmail.com') {
+          return true;
+        } else {
+          return false;
+        }
+      })
+    );
+  }
+
   async signInWithGoogle() {
     const googleAuthProvider = new GoogleAuthProvider();
     const googleAuth = getAuth();
     await signInWithPopup(googleAuth, googleAuthProvider).then((result) => {
-      return this.updateUserData(result.user);
+      if (result.user.email !== 'stevewitman@gmail.com') {
+        console.error('Only admin login allowed')
+        this.signOutWithGoogle()
+        return
+      } else {
+        console.log('Signed In With Google');
+        return this.updateUserData(result.user);
+      }
     });
     // .catch((error) => {
     //   const errorCode = error.code;
@@ -61,7 +85,7 @@ export class AuthService {
     const auth = getAuth();
     await signOut(auth)
       .then(() => {
-        // console.log('[AuthService] SUCCESSFULLY signed out');
+        console.log('Signed Out With Google');
       })
       .catch((error) => {
         console.log('[AuthService] ERROR while signing out', error);

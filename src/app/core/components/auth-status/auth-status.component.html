@@ -1,6 +1,9 @@
 <!-- SIGNED IN -->
 <div *ngIf="userAuthStatus$ | async">
-  <img [src]="(userAuthStatus$ | async)?.photoURL" [matMenuTriggerFor]="menu">
+  <!-- <img [src]="((userAuthStatus$ | async)!.photoURL)" [matMenuTriggerFor]="menu"> -->
+  <mat-icon *ngIf="userAuthStatus$ | async" [matMenuTriggerFor]="menu"
+      class="handset-person-icon-admin">person</mat-icon
+    >
   <mat-menu #menu="matMenu">
     <button mat-menu-item (click)="onSignOut()">Sign Out</button>
   </mat-menu>
@@ -10,19 +13,19 @@
 <div *ngIf="(userAuthStatus$ | async) === null">
 
   <!-- HANDSET -->
-  <ng-container *ngIf="(isHandset$ | async) === true"> 
+  <!-- <ng-container *ngIf="(isHandset$ | async) === true">  -->
     <mat-icon (click)="onSignIn()" *ngIf="(userAuthStatus$ | async) === null"
-      class="handset-person-icon">person</mat-icon
+      class="handset-person-icon">person_outline</mat-icon
     >
-  </ng-container>
+  <!-- </ng-container> -->
 
   <!-- DESKTOP -->
-  <ng-container *ngIf="(isHandset$ | async) === false"> 
+  <!-- <ng-container *ngIf="(isHandset$ | async) === false"> 
     <button
       mat-raised-button
       (click)="onSignIn()"
       class="auth-buttons"
     >Sign In</button>
-  </ng-container>
+  </ng-container> -->
 
 </div>

@@ -21,7 +21,7 @@
     </button>
   </ng-container>
   <span class="spacer"></span>
-
+  <!-- <button (click)="activeRoute()">route</button> -->
   <!-- AUTH -->
   <app-auth-status
     [isHandset$]="isHandset$"
@@ -43,74 +43,93 @@
        ... this is done with (click)="isHandset && drawer.close()" -->
       <a
         mat-list-item
+        class="mat-list-item"
         (click)="isHandset && drawer.close()"
         routerLinkActive="link-active"
         [routerLink]="['/home']"
-        ><span class="menu-item">Home</span></a
+        ><span class="list-item">Home</span></a
       >
       <!-- <a
         mat-list-item
+        class="mat-list-item"
         (click)="isHandset && drawer.close()"
         routerLinkActive="link-active"
         [routerLink]="['/projects']"
-        ><span class="menu-item">Projects</span></a
+        ><span class="list-item">Projects</span></a
       > -->
       <!-- <a
         mat-list-item
+        class="mat-list-item"
         (click)="isHandset && drawer.close()"
         routerLinkActive="link-active"
         [routerLink]="['/mentoring']"
-        ><span class="menu-item">Mentoring</span></a
+        ><span class="list-item">Mentoring</span></a
       > -->
       <!-- <a
         mat-list-item
+        class="mat-list-item"
         (click)="isHandset && drawer.close()"
         routerLinkActive="link-active"
         [routerLink]="['/volunteer']"
-        ><span class="menu-item">Volunteer</span></a
+        ><span class="list-item">Volunteer</span></a
       > -->
       <!-- <a
       mat-list-item
+      class="mat-list-item"
       (click)="isHandset && drawer.close()"
       routerLinkActive="link-active"
       [routerLink]="['/videos']"
-      ><span class="menu-item">Videos</span></a
+      ><span class="list-item">Videos</span></a
       > -->
       <!-- <a
       mat-list-item
+      class="mat-list-item"
       (click)="isHandset && drawer.close()"
       routerLinkActive="link-active"
       [routerLink]="['/blog']"
-      ><span class="menu-item">Blog</span></a
+      ><span class="list-item">Blog</span></a
       > -->
       <!-- <a
         mat-list-item
+        class="mat-list-item"
         (click)="isHandset && drawer.close()"
         routerLinkActive="link-active"
         [routerLink]="['/talks']"
-        ><span class="menu-item">Talks</span></a
+        ><span class="list-item">Talks</span></a
       > -->
       <a
       mat-list-item
+      class="mat-list-item"
       (click)="isHandset && drawer.close()"
       routerLinkActive="link-active"
       [routerLink]="['/about']"
-      ><span class="menu-item">About</span></a
+      ><span class="list-item">About</span></a
       >
       <a
       mat-list-item
+      class="mat-list-item"
       (click)="isHandset && drawer.close()"
       routerLinkActive="link-active"
       [routerLink]="['/contact']"
-      ><span class="menu-item">Contact</span></a
+      ><span class="list-item">Contact</span></a
       >
       <!-- <a
         mat-list-item
+        class="mat-list-item"
         (click)="isHandset && drawer.close()"
         routerLinkActive="link-active"
         [routerLink]="['/resume']"
-        ><span class="menu-item">Resume</span></a
+        ><span class="list-item">Resume</span></a
       > -->
+
+      <a *ngIf="isAdmin$ | async"
+        class="mat-list-item list-item-admin"
+        mat-list-item
+        (click)="isHandset && drawer.close()"
+        routerLinkActive="link-active-admin"
+        [routerLink]="['/admin']"
+        ><span class="list-item">Admin</span></a
+      >
     </mat-nav-list>
   </mat-sidenav>
 

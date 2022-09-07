@@ -34,28 +34,50 @@
 
 .mat-nav-list {
   padding-left: 0px;
-
 }
 
-.menu-item {
+.mat-list-item {
   color: white;
-  padding-left: 12px;
+  &:hover {
+    background-color: var(--color-gray-3);
+  }
+}
+
+.list-item {
+  padding-left: 6px;
+}
+
+.list-item-admin {
+  color: var(--color-gray-A);
+}
+
+.link-active {
+  color: #50B6D0;
+  &:hover {
+    color: #50B6D0;
+  }
+}
+
+.link-active-admin {
+  color: var(--color-warn);
+
+  &:hover {
+    color: var(--color-warn);
+  }
 }
 
 .icon {
   padding-left: 2px;
   padding-right: 6px;
-
   color: #606060;
 }
 
-.link-active {
-  color: var(--color-orange500);
-
-  .mat-icon {
-    color: var(--color-orange500);
-  }
-}
+// .link-active {
+//   color: var(--color-orange500);
+//   .mat-icon {
+//     color: var(--color-orange500);
+//   }
+// }
 
 .sub-menu {
   padding-left: 50px;
@@ -105,33 +127,33 @@ hr {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-// Angular Mentors Logo
-.ngnuggets-logo-toolbar {
-  padding-top: 8px;
-  width: 175px;
-}
+// // Angular Mentors Logo
+// .ngnuggets-logo-toolbar {
+//   padding-top: 8px;
+//   width: 175px;
+// }
 
-.angularmentors-light-icon {
-  padding-left: 8px;
-  color: var(--color-orange500);
-}
+// .angularmentors-light-icon {
+//   padding-left: 8px;
+//   color: var(--color-orange500);
+// }
 
-.angularmentors-light-angular {
-  font-family: 'Roboto Condensed', sans-serif;
-}
+// .angularmentors-light-angular {
+//   font-family: 'Roboto Condensed', sans-serif;
+// }
 
-.angularmentors-light-mentors {
-  padding-left: 2px;
-  color: var(--color-orange500);
-  font-family: 'Roboto Condensed', sans-serif;
-}
+// .angularmentors-light-mentors {
+//   padding-left: 2px;
+//   color: var(--color-orange500);
+//   font-family: 'Roboto Condensed', sans-serif;
+// }
 
-.angularmentors-light-dotcom {
-  padding-left: 2px;
-  color: black;
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 0.6rem;
-}
+// .angularmentors-light-dotcom {
+//   padding-left: 2px;
+//   color: black;
+//   font-family: 'Roboto Condensed', sans-serif;
+//   font-size: 0.6rem;
+// }
 
 // Page Styles
 mat-sidenav-content {
