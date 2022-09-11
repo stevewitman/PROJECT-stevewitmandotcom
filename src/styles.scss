@@ -1,7 +1,9 @@
 :root {
-  --color-primary: #00B8D4;
+  --color-primary: #039BE5;
+  --color-primary-light: #4FC3F7;
   --color-accent: #FFD600;
   --color-warn: #FF6D00;
+  --color-warn-light: #FFB74D;
   --color-red: #CB2B39;
 
   --color-gray-1: #101010;
@@ -42,4 +44,16 @@ h4,
 h5,
 h6 {
   margin: 0;
+}
+
+.mat-checkbox-label {
+  color: var(--color-gray-2);
+}
+
+.mat-form-field-empty.mat-form-field-label {
+  color: var(--color-gray-8);
+}
+
+.mat-form-field-appearance-outline .mat-form-field-wrapper {
+  margin: 0 !important;
 }

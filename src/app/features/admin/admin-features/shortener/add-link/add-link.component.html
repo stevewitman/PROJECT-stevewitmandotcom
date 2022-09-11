@@ -1,0 +1,83 @@
+<div class="form-container">
+  <form [formGroup]="linkForm">
+
+    <div class="row-collapsed">
+      <mat-form-field class="full-url" appearance="outline">
+        <mat-label>URL to Manage</mat-label>
+        <input type="text"  class="input-text" matInput formControlName="fullUrl" autocomplete="off" />
+      </mat-form-field>
+    </div>
+
+    <div
+      class="hidden-section"
+      [@inOutAnimation]
+      *ngIf="linkForm.controls.fullUrl.dirty"
+    >
+
+      <div class="row-two">
+        <div class="col-left">
+          <div class="row">
+            <mat-form-field class="full-url" appearance="outline">
+              <mat-label>Short URL</mat-label>
+              <input type="text"  class="input-text" matInput formControlName="shortUrl" autocomplete="off" />
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-right">
+          <mat-checkbox
+          color="primary"
+          formControlName="active"
+            >Active</mat-checkbox
+          >
+          <mat-checkbox
+            color="primary"
+            formControlName="public"
+            >Public</mat-checkbox
+          >
+          <mat-checkbox
+            color="primary"
+            formControlName="show"
+            >Show Link</mat-checkbox
+          >
+        </div>
+      </div>
+      
+      <div class="row-three">
+        <mat-form-field class="full-url" appearance="outline">
+          <mat-label>Title</mat-label>
+          <input type="text" class="input-text" matInput formControlName="title" autocomplete="off" />
+        </mat-form-field>
+      </div>
+
+      <div class="row-four">
+        <mat-form-field class="full-url" appearance="outline">
+          <mat-label>Description</mat-label>
+          <textarea
+            type="text"
+            class="textarea-text"
+            cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5"
+            matInput
+            formControlName="description"
+            autocomplete="off"
+          ></textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="actions">
+        <button mat-flat-button class="btn btn-cancel" (click)="cancel()">
+          CANCEL
+        </button>
+        <button mat-flat-button color="primary" class="btn btn-save" (click)="addLink()">
+          ADD
+        </button>
+      </div>
+
+    </div>
+  </form>
+</div>
+<!-- <pre>
+  {{ linkForm.value  | json }}
+</pre> -->

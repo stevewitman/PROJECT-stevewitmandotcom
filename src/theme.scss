@@ -2,7 +2,7 @@
 
 @include mat.core();
 
-$sw-primary: mat.define-palette(mat.$cyan-palette, A700); // #00B8D4
+$sw-primary: mat.define-palette(mat.$light-blue-palette, 600); // #00B8D4
 $sw-accent: mat.define-palette(mat.$yellow-palette, A700); // #FFD600
 $sw-warn: mat.define-palette(mat.$orange-palette, A700); // #FF6D00
 

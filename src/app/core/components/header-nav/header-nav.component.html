@@ -6,7 +6,7 @@
       mat-icon-button
       (click)="drawer.toggle()"
     >
-      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      <mat-icon>menu</mat-icon>
     </button>
   </ng-container>
   <ng-container *ngIf="drawer.opened">
@@ -17,7 +17,7 @@
       mat-icon-button
       (click)="drawer.toggle()"
     >
-      <mat-icon aria-label="Side nav toggle icon">menu_open</mat-icon>
+      <mat-icon>menu_open</mat-icon>
     </button>
   </ng-container>
   <span class="spacer"></span>
@@ -30,10 +30,9 @@
     (signOutWithGoogle)="signOutWithGoogle()"
   ></app-auth-status>
 </mat-toolbar>
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container>
   <mat-sidenav
     #drawer
-    class="sidenav"
     fixedInViewport
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
@@ -41,6 +40,16 @@
     <mat-nav-list>
       <!-- close sidenav on click only if mobile otherwise leave open on desktop view
        ... this is done with (click)="isHandset && drawer.close()" -->
+      <a
+        *ngIf="isAdmin$ | async"
+        class="mat-list-item list-item-admin"
+        mat-list-item
+        (click)="isHandset && drawer.close()"
+        routerLinkActive="link-active-admin"
+        [routerLink]="['/admin']"
+        ><span class="list-item">Admin</span></a
+      >
+      <mat-divider class="divider-dark" *ngIf="isAdmin$ | async"></mat-divider>
       <a
         mat-list-item
         class="mat-list-item"
@@ -98,20 +107,20 @@
         ><span class="list-item">Talks</span></a
       > -->
       <a
-      mat-list-item
-      class="mat-list-item"
-      (click)="isHandset && drawer.close()"
-      routerLinkActive="link-active"
-      [routerLink]="['/about']"
-      ><span class="list-item">About</span></a
+        mat-list-item
+        class="mat-list-item"
+        (click)="isHandset && drawer.close()"
+        routerLinkActive="link-active"
+        [routerLink]="['/about']"
+        ><span class="list-item">About</span></a
       >
       <a
-      mat-list-item
-      class="mat-list-item"
-      (click)="isHandset && drawer.close()"
-      routerLinkActive="link-active"
-      [routerLink]="['/contact']"
-      ><span class="list-item">Contact</span></a
+        mat-list-item
+        class="mat-list-item"
+        (click)="isHandset && drawer.close()"
+        routerLinkActive="link-active"
+        [routerLink]="['/contact']"
+        ><span class="list-item">Contact</span></a
       >
       <!-- <a
         mat-list-item
@@ -121,16 +130,17 @@
         [routerLink]="['/resume']"
         ><span class="list-item">Resume</span></a
       > -->
-
-      <a *ngIf="isAdmin$ | async"
-        class="mat-list-item list-item-admin"
+      <mat-divider class="divider-dark"></mat-divider>
+      <a
+        href="https://ngnuggets.com"
         mat-list-item
+        class="mat-list-item"
         (click)="isHandset && drawer.close()"
-        routerLinkActive="link-active-admin"
-        [routerLink]="['/admin']"
-        ><span class="list-item">Admin</span></a
-      >
+        >
+      <img src="./assets/images/ngnuggetsdotcom.png" class="ngnuggets-image" />
+      </a>
     </mat-nav-list>
+
   </mat-sidenav>
 
   <mat-sidenav-content>
