@@ -1,4 +1,5 @@
 import { Injectable, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Firestore, doc, setDoc } from '@angular/fire/firestore';
 import { map, Observable, of, Subscription, tap } from 'rxjs';
@@ -20,7 +21,11 @@ export class AuthService implements OnDestroy {
   userAuthState$: Observable<User | null> = of(null);
   subUserAuthState$: Subscription | null = null;
 
-  constructor(private auth: Auth, private firestore: Firestore) {
+  constructor(
+    private auth: Auth,
+    private firestore: Firestore,
+    private router: Router
+  ) {
     this.userAuthState$ = authState(this.auth);
   }
 
@@ -54,7 +59,8 @@ export class AuthService implements OnDestroy {
         return
       } else {
         console.log('Signed In With Google');
-        return this.updateUserData(result.user);
+        this.updateUserData(result.user);
+        return this.router.navigate(['/admin']);
       }
     });
     // .catch((error) => {

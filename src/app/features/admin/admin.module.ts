@@ -12,12 +12,15 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AdminRoutingModule } from './admin-routing.module';
-import { ShortenerPageComponent } from './admin-features/shortener/shortener-page/shortener-page.component';
 import { AdminPageComponent } from './admin-features/admin-page/admin-page.component';
-import { AddLinkComponent } from './admin-features/shortener/add-link/add-link.component';
+import { AdminNavComponent } from './admin-features/admin-nav/admin-nav.component';
+import { ConsolePageComponent } from './admin-features/console-page/console-page.component';
+import { LinkAddComponent } from './admin-features/link-add/link-add.component';
+import { LinksPageComponent } from './admin-features/links-page/links-page.component';
+import { LinksListComponent } from './admin-features/links-list/links-list.component';
 
 @NgModule({
-  declarations: [ShortenerPageComponent, AdminPageComponent, AddLinkComponent],
+  declarations: [AdminPageComponent, AdminNavComponent, ConsolePageComponent, LinkAddComponent, LinksPageComponent, LinksListComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

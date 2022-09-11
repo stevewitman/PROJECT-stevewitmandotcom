@@ -1,26 +1,11 @@
-img {
-  margin-top: 10px;
-  height: 36px;
-  width: 36px;
-  border: 1px solid white;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.auth-buttons {
-  background-color: #252525;
-  color: #EEE;
-  border: 1px solid #EEE;
+.auth-icon-container {
+  height: 56px;
+  padding: 15px 22px 15px 15px;
 }
 
 .handset-person-icon {
-  margin-top: 8px;
   color: #EEE;
   cursor: pointer;
-}
-
-.handset-person-icon-admin {
-  margin-top: 8px;
-  color: var(--color-warn-light);
-  cursor: pointer;
+  position: relative;
+  top: 2px;
 }

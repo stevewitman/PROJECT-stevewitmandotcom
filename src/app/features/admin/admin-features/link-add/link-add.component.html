@@ -3,15 +3,15 @@
 
     <div class="row-collapsed">
       <mat-form-field class="full-url" appearance="outline">
-        <mat-label>URL to Manage</mat-label>
-        <input type="text"  class="input-text" matInput formControlName="fullUrl" autocomplete="off" />
+        <mat-label>URL to Shorten</mat-label>
+        <input type="text"  class="input-text" matInput formControlName="url" autocomplete="off" />
       </mat-form-field>
     </div>
 
     <div
       class="hidden-section"
       [@inOutAnimation]
-      *ngIf="linkForm.controls.fullUrl.dirty"
+      *ngIf="linkForm.controls.url.dirty"
     >
 
       <div class="row-two">
@@ -19,7 +19,7 @@
           <div class="row">
             <mat-form-field class="full-url" appearance="outline">
               <mat-label>Short URL</mat-label>
-              <input type="text"  class="input-text" matInput formControlName="shortUrl" autocomplete="off" />
+              <input type="text"  class="input-text" matInput formControlName="slug" autocomplete="off" />
             </mat-form-field>
           </div>
         </div>
@@ -51,7 +51,7 @@
 
       <div class="row-four">
         <mat-form-field class="full-url" appearance="outline">
-          <mat-label>Description</mat-label>
+          <mat-label>Notes</mat-label>
           <textarea
             type="text"
             class="textarea-text"
@@ -60,7 +60,7 @@
             cdkAutosizeMinRows="1"
             cdkAutosizeMaxRows="5"
             matInput
-            formControlName="description"
+            formControlName="notes"
             autocomplete="off"
           ></textarea>
         </mat-form-field>
@@ -78,6 +78,3 @@
     </div>
   </form>
 </div>
-<!-- <pre>
-  {{ linkForm.value  | json }}
-</pre> -->

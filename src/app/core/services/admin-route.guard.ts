@@ -1,7 +1,7 @@
-import { Injectable, TRANSLATIONS } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 
-import { map, Observable, of, tap } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { User } from '@angular/fire/auth';
 
 import { AuthService } from './auth.service';
@@ -13,7 +13,7 @@ export class AdminRouteGuard implements CanActivate {
   
   userAuthStatus$: Observable<User | null> = of(null);
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService) {
     this.userAuthStatus$ = this.authService.getUserAuthState();
   }
 

@@ -154,7 +154,4 @@ export class HeaderNavComponent implements OnInit, AfterViewInit, OnDestroy {
       });
   }
 
-  // activeRoute() {
-  //   console.log(this.activatedRoute.snapshot.url[0]);
-  // }
 }

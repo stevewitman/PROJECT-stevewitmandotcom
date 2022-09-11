@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShortenerPageComponent } from './shortener-page.component';
+import { ConsolePageComponent } from './console-page.component';
 
-describe('ShortenerPageComponent', () => {
-  let component: ShortenerPageComponent;
-  let fixture: ComponentFixture<ShortenerPageComponent>;
+describe('ConsolePageComponent', () => {
+  let component: ConsolePageComponent;
+  let fixture: ComponentFixture<ConsolePageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ShortenerPageComponent ]
+      declarations: [ ConsolePageComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ShortenerPageComponent);
+    fixture = TestBed.createComponent(ConsolePageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

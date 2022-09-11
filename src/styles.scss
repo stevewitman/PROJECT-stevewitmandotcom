@@ -57,3 +57,20 @@ h6 {
 .mat-form-field-appearance-outline .mat-form-field-wrapper {
   margin: 0 !important;
 }
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  background-color: white;
+  border-radius: 5px;
+}
+
+.mat-checkbox-inner-container {
+  background-color: white;
+}
+
+.mat-form-field-outline {
+  color: var(--color-gray-E) !important;
+  opacity: 1!important;
+}
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: var(--color-primary) !important;
+}

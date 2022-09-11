@@ -11,13 +11,17 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-left: 12px;
+  padding: 0;
   background: #252525;
   color: #EEE;
 
   a {
     text-decoration: none;
   }
+}
+
+.admin-indicator {
+  background: var(--color-warn);
 }
 
 .spacer {
@@ -47,22 +51,10 @@
   padding-left: 6px;
 }
 
-.list-item-admin {
-  color: var( --color-gray-A);
-}
-
 .link-active {
   color: var(--color-primary-light);
   &:hover {
     color: var(--color-primary-light);
-  }
-}
-
-.link-active-admin {
-  color: var(--color-warn-light);
-
-  &:hover {
-    color: var(--color-warn-light);
   }
 }
 
@@ -76,8 +68,8 @@
   padding-left: 50px;
 }
 
-.menu-expand {
-  padding-left: 80px;
+.menu-button {
+  margin-left: 12px;
 }
 
 hr {

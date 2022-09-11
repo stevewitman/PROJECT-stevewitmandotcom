@@ -1,31 +1,16 @@
 <!-- SIGNED IN -->
-<div *ngIf="userAuthStatus$ | async">
-  <!-- <img [src]="((userAuthStatus$ | async)!.photoURL)" [matMenuTriggerFor]="menu"> -->
-  <mat-icon *ngIf="userAuthStatus$ | async" [matMenuTriggerFor]="menu"
-      class="handset-person-icon-admin">person</mat-icon
-    >
-  <mat-menu #menu="matMenu">
+<div *ngIf="userAuthStatus$ | async" class="auth-icon-container" [matMenuTriggerFor]="menuSignedIn">
+  <mat-icon class="handset-person-icon">person</mat-icon>
+  <mat-menu #menuSignedIn="matMenu">
     <button mat-menu-item (click)="onSignOut()">Sign Out</button>
   </mat-menu>
 </div>
 
 <!-- NOT SIGNED IN -->
-<div *ngIf="(userAuthStatus$ | async) === null">
-
+<div *ngIf="(userAuthStatus$ | async) === null" class="auth-icon-container" [matMenuTriggerFor]="menuSignedOut">
   <!-- HANDSET -->
-  <!-- <ng-container *ngIf="(isHandset$ | async) === true">  -->
-    <mat-icon (click)="onSignIn()" *ngIf="(userAuthStatus$ | async) === null"
-      class="handset-person-icon">person_outline</mat-icon
-    >
-  <!-- </ng-container> -->
-
-  <!-- DESKTOP -->
-  <!-- <ng-container *ngIf="(isHandset$ | async) === false"> 
-    <button
-      mat-raised-button
-      (click)="onSignIn()"
-      class="auth-buttons"
-    >Sign In</button>
-  </ng-container> -->
-
+    <mat-icon class="handset-person-icon">person_outline</mat-icon>
+    <mat-menu #menuSignedOut="matMenu">
+      <button mat-menu-item (click)="onSignIn()">Sign In With Google</button>
+    </mat-menu>
 </div>
