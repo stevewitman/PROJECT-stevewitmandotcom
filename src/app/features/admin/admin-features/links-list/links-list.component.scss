@@ -1,0 +1,79 @@
+table {
+  margin-top: 24px;
+  border-collapse: collapse;
+}
+.th-show {
+  text-align: left;
+}
+.th-visits {
+  text-align: right;
+  padding: 0 12px;
+}
+.th-slug {
+  text-align: left;
+  padding: 0 12px;
+}
+.th-title {
+  text-align: left;
+  padding: 0 12px;
+}
+.th-title {
+  text-align: left;
+  padding: 0 12px;
+}
+
+tr {
+  height: 30px;
+}
+
+.mat-icon {
+  height: 20px;
+}
+
+.link-public {
+  color: var(--color-primary);
+}
+
+.link-private {
+  color: var(--color-warn);
+}
+
+.link-inactive {
+  color: var(--color-gray-B);
+}
+
+.link-show {
+  height: 20px;
+  text-align: center;
+}
+
+.link-visits {
+  text-align: right;
+  width: 70px;
+  padding: 0 12px;
+}
+
+.link-slug {
+  width: 200px;
+  padding: 0 12px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.link-title {
+  width: 600px;
+  padding: 0 12px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.link-date {
+  width: 100;
+  padding: 0 12px;
+}
+
+.row-hover:hover {
+  cursor: pointer;
+  background-color: rgb(255, 255, 237);
+  border: 1px solid var(--color-gray-B);
+}

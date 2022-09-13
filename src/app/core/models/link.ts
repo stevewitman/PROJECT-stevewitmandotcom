@@ -7,5 +7,6 @@ export interface Link {
   show: boolean;
   title: string;
   notes?: string;
-  dateAdded?: Date;
+  visits: number;
+  dateCreated?: Date;
 }

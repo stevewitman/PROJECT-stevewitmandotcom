@@ -11,6 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
+import { CoreModule } from 'src/app/core/core.module';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminPageComponent } from './admin-features/admin-page/admin-page.component';
 import { AdminNavComponent } from './admin-features/admin-nav/admin-nav.component';
@@ -20,10 +21,18 @@ import { LinksPageComponent } from './admin-features/links-page/links-page.compo
 import { LinksListComponent } from './admin-features/links-list/links-list.component';
 
 @NgModule({
-  declarations: [AdminPageComponent, AdminNavComponent, ConsolePageComponent, LinkAddComponent, LinksPageComponent, LinksListComponent],
+  declarations: [
+    AdminPageComponent,
+    AdminNavComponent,
+    ConsolePageComponent,
+    LinkAddComponent,
+    LinksPageComponent,
+    LinksListComponent,
+  ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    CoreModule,
     AdminRoutingModule,
     MatButtonModule,
     MatCheckboxModule,

@@ -12,10 +12,4 @@ export class AdminPageComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  queryForSlug(slug: string) {
-    const result = this.linksService.getLinkBySlug(slug);
-    result.subscribe(res => {
-      console.log("RESULT:", res)
-    })
-  };
 }

@@ -1,58 +1,72 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 
-import { serverTimestamp } from 'firebase/firestore';
 import {
-  addDoc,
   collection,
-  collectionGroup,
+  collectionData,
   doc,
-  docData,
   Firestore,
-  query,
   setDoc,
-  where,
+  serverTimestamp,
 } from '@angular/fire/firestore';
 
 import {
   Observable,
-  of,
-  map,
-  mergeMap,
-  groupBy,
-  zip,
-  toArray,
   BehaviorSubject,
   from,
+  takeUntil,
+  ReplaySubject
 } from 'rxjs';
 import { Link } from '../models/link';
 
 @Injectable({
   providedIn: 'root',
 })
-export class LinksService {
-  constructor(private firestore: Firestore) {}
+export class LinksService implements OnDestroy {
+  private destroyed$: ReplaySubject<boolean> = new ReplaySubject(1);
+  private links$ = new BehaviorSubject<Link[]>([]);
 
-  getLinkBySlug(slug: string) {
-    const ref = doc(this.firestore, 'links-temp', slug);
-    return docData(ref);
+  constructor(private firestore: Firestore) {
+    this.loadLinks();
   }
 
-  getLinkByUrl() {
+  ngOnDestroy() {
+    this.destroyed$.next(true);
+    this.destroyed$.complete();
+  }
 
+  async loadLinks(): Promise<void> {
+    const ref = collection(this.firestore, 'links');
+    const data = (await collectionData(ref)) as Observable<Link[]>;
+    data
+      .pipe(
+        takeUntil(this.destroyed$)
+      )
+      .subscribe((data) => {
+        this.links$.next(data);
+      });
+    console.log(
+      '%cLoaded links from Firestore',
+      'background: #FF6D0010; color: #FF6D00;'
+    );
+  }
+
+  getLinks(): Observable<Link[]> {
+
+    return this.links$;
   }
 
   addLink(link: Link) {
-    let ref;
-    if (link.active === false) {
-      // LINK INACTIVE
-      ref = doc(this.firestore, 'links-inactive', link.slug);
-    } else if (link.public === true) {
-      // LINK ACTIVE - PUBLIC
-      ref = doc(this.firestore, 'links-public', link.slug);
-    } else {
-      // LINK ACTIVE - PRIVATE
-      ref = doc(this.firestore, 'links-private', link.slug);
-    }
-    return from(setDoc(ref, { ...link, dateCreated: serverTimestamp() }));
+    const ref = doc(this.firestore, 'links', link.slug);
+    console.log(
+      `%cAdding link (${link.slug}) to Firestore`,
+      'background: #FF6D0010; color: #FF6D00;'
+    );
+    return from(
+      setDoc(ref, {
+        ...link,
+        visits: 0,
+        dateCreated: serverTimestamp(),
+      })
+    );
   }
 }

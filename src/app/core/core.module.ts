@@ -14,12 +14,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { ShellComponent } from './components/shell/shell.component';
 import { HeaderNavComponent } from './components/header-nav/header-nav.component';
 import { AuthStatusComponent } from './components/auth-status/auth-status.component';
+import { JsDatePipe } from './pipes/js-date.pipe';
 
 @NgModule({
   declarations: [
     ShellComponent,
     HeaderNavComponent,
     AuthStatusComponent,
+    JsDatePipe,
   ],
   imports: [
     CommonModule,
@@ -33,6 +35,6 @@ import { AuthStatusComponent } from './components/auth-status/auth-status.compon
     MatSidenavModule,
     MatToolbarModule,
   ],
-  exports: [ShellComponent],
+  exports: [ShellComponent, JsDatePipe],
 })
 export class CoreModule {}

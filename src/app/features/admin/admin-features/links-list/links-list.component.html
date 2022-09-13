@@ -1,1 +1,16 @@
-<p>links-list works!</p>
+<table>
+  <tr>
+    <th class="th-show">SHOW</th>
+    <th class="th-visits">VISITS</th>
+    <th class="th-slug">SLUG</th>
+    <th class="th-title">TITLE</th>
+    <th class="th-date">DATE</th>
+  </tr>
+  <tr *ngFor="let link of (linksAll$ | async)" [ngClass]="{ 'link-inactive' : !link.active, 'link-public' : link.public, 'link-private' : !link.public }" (click)="linkDetails(link)" class="row-hover">
+    <td class="link-show"><mat-icon *ngIf="link.show">visibility</mat-icon></td>
+    <td class="link-visits">{{ link.visits | number}}</td>
+    <td class="link-slug">{{ link.slug }}</td>
+    <td><div class="link-title">{{ link.title }}</div></td>
+    <td class="link-date">{{ link.dateCreated | jsDate }}</td>
+  </tr>
+</table>
