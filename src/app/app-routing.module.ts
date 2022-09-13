@@ -6,9 +6,9 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'home',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
-  {   
+  {
     path: 'home',
     loadChildren: () =>
       import('./features/home/home.module').then((m) => m.HomeModule),
@@ -31,12 +31,16 @@ const routes: Routes = [
   {
     path: 'mentoring',
     loadChildren: () =>
-      import('./features/mentoring/mentoring.module').then((m) => m.MentoringModule),
+      import('./features/mentoring/mentoring.module').then(
+        (m) => m.MentoringModule
+      ),
   },
   {
     path: 'projects',
     loadChildren: () =>
-      import('./features/projects/projects.module').then((m) => m.ProjectsModule),
+      import('./features/projects/projects.module').then(
+        (m) => m.ProjectsModule
+      ),
   },
   {
     path: 'resume',
@@ -56,14 +60,26 @@ const routes: Routes = [
   {
     path: 'volunteer',
     loadChildren: () =>
-      import('./features/volunteer/volunteer.module').then((m) => m.VolunteerModule),
+      import('./features/volunteer/volunteer.module').then(
+        (m) => m.VolunteerModule
+      ),
   },
   {
     path: 'admin',
     loadChildren: () =>
       import('./features/admin/admin.module').then((m) => m.AdminModule),
-    canActivate: [AdminRouteGuard]
+    canActivate: [AdminRouteGuard],
   },
+  {
+    path: '404',
+    loadChildren: () =>
+      import('./features/page-not-found/page-not-found.module').then((m) => m.PageNotFoundModule),
+  },
+  {
+    path: ':slug',
+    loadChildren: () =>
+      import('./features/redirect/redirect.module').then((m) => m.RedirectModule),
+  }
 ];
 
 @NgModule({

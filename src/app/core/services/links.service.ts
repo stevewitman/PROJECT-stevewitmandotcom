@@ -4,18 +4,19 @@ import {
   collection,
   collectionData,
   doc,
+  docData,
   Firestore,
-  setDoc,
   serverTimestamp,
+  setDoc,
 } from '@angular/fire/firestore';
-
 import {
-  Observable,
   BehaviorSubject,
   from,
+  Observable,
+  ReplaySubject,
   takeUntil,
-  ReplaySubject
 } from 'rxjs';
+
 import { Link } from '../models/link';
 
 @Injectable({
@@ -37,13 +38,9 @@ export class LinksService implements OnDestroy {
   async loadLinks(): Promise<void> {
     const ref = collection(this.firestore, 'links');
     const data = (await collectionData(ref)) as Observable<Link[]>;
-    data
-      .pipe(
-        takeUntil(this.destroyed$)
-      )
-      .subscribe((data) => {
-        this.links$.next(data);
-      });
+    data.pipe(takeUntil(this.destroyed$)).subscribe((data) => {
+      this.links$.next(data);
+    });
     console.log(
       '%cLoaded links from Firestore',
       'background: #FF6D0010; color: #FF6D00;'
@@ -51,8 +48,12 @@ export class LinksService implements OnDestroy {
   }
 
   getLinks(): Observable<Link[]> {
-
     return this.links$;
+  }
+
+  getLinkBySlug(slug: string): Observable<Link> {
+    const docRef = doc(this.firestore, 'links', slug);
+    return docData(docRef) as Observable<Link>;
   }
 
   addLink(link: Link) {
