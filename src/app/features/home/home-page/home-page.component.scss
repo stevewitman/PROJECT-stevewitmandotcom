@@ -125,7 +125,12 @@ a:visited {
     width: auto;
     height: auto;
     max-width: 1680px;
+
+    @media screen and (max-width: 650px) {
+      width: 100%;
+    }
   }
+
 }
 
 .section-dark {
@@ -274,4 +279,14 @@ a:visited {
   z-index: 100;
   transition: all 100ms ease-in;
   transform: scale(1.02);
+}
+
+.mentoring-description {
+  padding-top: 30px;
+  max-width: 560px;
+  line-height: 24px;
+  font-weight: lighter;
+  @media screen and (max-width: 650px) {
+    padding-top: 10px;
+  }
 }

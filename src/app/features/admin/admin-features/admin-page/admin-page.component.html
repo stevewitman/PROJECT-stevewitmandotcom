@@ -1,8 +1,10 @@
-<div class="short-container">
-  <app-link-add></app-link-add>
-</div>
-<mat-divider></mat-divider>
-<div class="admin-container">
-  <app-admin-nav></app-admin-nav>
-  <router-outlet></router-outlet>
+<div class="container" [@pageTransition]>
+  <div class="short-container">
+    <app-link-add></app-link-add>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="admin-container">
+    <app-admin-nav></app-admin-nav>
+    <router-outlet></router-outlet>
+  </div>
 </div>
