@@ -1,0 +1,27 @@
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: var(--color-primary);
+  font-weight: bolder;
+}
+
+.row {
+  display: flex;
+  padding: 0 0 18px 0;
+}
+
+.label {
+  font-weight: bold;
+  width: 200px;
+}
+
+.info {
+  font-weight: 300;
+  letter-spacing: 1px;
+}
