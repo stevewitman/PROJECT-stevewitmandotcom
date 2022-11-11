@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/stevewitmandotcom",
+    "public": "dist/stevewitmandotcom/assets",
     "ignore": [
       "firebase.json",
       "**/.*",

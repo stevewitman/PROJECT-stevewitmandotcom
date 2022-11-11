@@ -1,0 +1,24 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+  	match /links/{linkId} {
+    	allow read;
+      allow write: if request.auth != null && isAdmin();
+    }
+    // match /{document=**} {
+      // allow read, write: if request.time < timestamp.date(2021, 11, 17);
+      // allow read, write: if request.auth.uid != null;
+      // match /users/{userId} {
+      //   //  user record reads allowed if they are the owner
+      //   allow read: if request.auth != null && request.auth.uid == userId;
+      //   // user record writes allowed if they are the owner and no isAdmin field added
+      //   allow write: if request.resource.data.uid == request.auth.uid &&
+      //     (request.resource.data.diff(resource.data).affectedKeys()
+      //     .hasOnly(['uid', 'email', 'displayName', 'photoUrl']));
+      // }
+    // }
+    function isAdmin() {
+    	return request.auth.uid == 'v8qGyOJZuUNDJorFqRBm5bYl6hD3';
+    }
+  }
+}
