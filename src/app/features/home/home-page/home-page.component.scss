@@ -1,14 +1,7 @@
 a {
-  color: var(--color-primary);
-}
-
-a:link, a:hover, a:active {
-  text-decoration: none;
-}
-
-a:visited {
-  text-decoration: none;
-  color: var(--color-primary);
+  &:hover {
+    font-weight: inherit;
+  }
 }
 
 .hero {
@@ -248,7 +241,7 @@ a:visited {
 .card-subtitle {
   font-size: 19px;
   font-weight: lighter;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   padding-bottom: 6px;
   
   @media screen and (max-width: 650px) {
