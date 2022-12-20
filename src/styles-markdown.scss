@@ -1,0 +1,256 @@
+.markdown {
+  // H1 - Title
+  // H2 - Heading
+  // H3 - Sub-Heading
+  // H4 - Code block filename / title
+  // H5 - Terminal commands
+  // H6 - Tag
+  // *...* - Highlight
+
+  &:first-child {
+    color: var(--color-gray-1);
+  }
+
+  img {
+    position: relative;
+    top: -18px;
+    margin-right: 16px;
+    // margin-bottom: 8px;
+    float: left;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  pre,
+  blockquote,
+  hr {
+    margin-top: 0;
+    margin-bottom: 24px;
+    padding: 0;
+  }
+
+  p+h4,
+  p+h5,
+  p+h6,
+  p+code,
+  p+blockquote {
+    margin-top: 20px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  h1 {
+    font-size: 40px;
+    // color: var(--color-warn);
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
+
+  h2 {
+    color: var(--color-gray-1);
+    font-size: 32px;
+    font-weight: 500;
+    margin-top: 32px;
+    margin-bottom: 20px;
+    text-transform: none;
+  }
+
+  h3 {
+    font-size: 24px;
+    margin-top: 28px;
+    margin-bottom: 18px;
+  }
+
+  h4 {
+    // using for file names on code blocks
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+    padding: 6px 20px;
+    border-radius: 6px 6px 0 0;
+    background-color: var(--color-primary);
+    color: white;
+    margin-bottom: 0;
+  }
+
+  pre {
+    font-family: Consolas, monospace;
+    letter-spacing: 0.5px;
+    border: 1px solid var(--color-gray-E);
+    padding: 1rem;
+    background-color: var(--color-primary-very-light);
+    white-space: pre-wrap;
+    border-radius: 6px;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 24px
+  }
+
+  h4+pre {
+    border-radius: 0 0 6px 6px;
+  }
+
+  h5 {
+    // using for terminal commands
+    font-family: Consolas, monospace;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    padding: 20px;
+    border-radius: 6px;
+    background-color: var(--color-gray-4);
+    color: white;
+
+    &:before {
+      color: #77F94E;
+      font-weight: 900;
+      content: "\203A";
+      padding-right: 10px;
+    }
+  }
+
+  h6 {
+    // Tags
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    padding: 3px 18px;
+    border-radius: 18px;
+    background-color: var(--color-warn);
+    color: white;
+    margin: 0px 3px 12px 3px;
+
+    a {
+      color: white;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &:first-of-type {
+      // Author name
+      display: block;
+      position: relative;
+      top: -13px;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 20px;
+      letter-spacing: 1px;
+      padding: 0;
+      margin: 0;
+      border-radius: 0;
+      background-color: transparent;
+
+      a {
+        color: var(--color-primary);
+        // &:hover {
+        //   text-decoration: underline;
+        // } 
+      }
+    }
+
+    &:nth-of-type(2) {
+      // Date posted
+      display: block;
+      position: relative;
+      top: -15px;
+      font-size: 16px;
+      line-height: 30px;
+      padding: 0;
+      margin: 0;
+      border-radius: 0;
+      background-color: transparent;
+      color: var(--color-gray-A);
+    }
+
+    &:last-of-type {
+      // "All Tags" link
+      background-color: var(--color-primary-light);
+      color: #404040;
+      margin-bottom: 30px;
+    }
+  }
+
+  // h6>a {
+  //   color: white;
+  //   &:first-of-type {
+  //     color: var(--color-primary);
+  //   }
+  //   &:hover {
+  //     text-decoration: underline;
+  //   }
+
+  // }
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    color: var(--color-gray-3);
+    margin-bottom: 16px;
+
+    code {
+      font-family: Consolas, monospace;
+      letter-spacing: 0.5px;
+      padding: 6px;
+      border-radius: 5px;
+      background-color: var(--color-gray-F);
+      color: var(--color-primary);
+    }
+  }
+
+  ul {
+    padding-left: 16px;
+  }
+
+  li {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    color: var(--color-gray-3);
+    margin-bottom: 16px;
+    p {
+      position: relative;
+      left: 4px;
+    }
+    &::marker {
+      // font-size: 24px;
+      color: var(--color-warn);
+    }
+  }
+
+  blockquote {
+    margin: 0 0 30px 0;
+    padding: 24px 24px 1px 24px;
+    border-left: 8px solid var(--color-warn);
+    background-color: var(--color-warn-very-light);
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid;
+  }
+
+  em {
+    font-style: normal;
+    padding: 1px 3px;
+    border-radius: 3px;
+    background-color: #ffff66;
+    color: black;
+  }
+
+  hr {
+    margin-top: 24px;
+    border-top: 1px solid var(--color-gray-C);
+  }
+}

@@ -1,0 +1,9 @@
+<h2>Blog<span class="spaced">/</span>Notes List</h2>
+<div class="blog-post" *ngFor="let blog of blogs" [routerLink]="blog.filename">
+
+  <p class="blog-date">{{ blog.dateCreated }}</p>
+  <p class="blog-title">{{ blog.title }}</p>
+  <p>
+    <span class="blog-tag" *ngFor="let tag of blog.tags">{{ tag }}</span>
+  </p>
+</div>

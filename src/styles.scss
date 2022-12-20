@@ -1,9 +1,13 @@
+@import 'styles-markdown';
+
 :root {
   --color-primary: #039BE5;
   --color-primary-light: #4FC3F7;
+  --color-primary-very-light: #039ae511;
   --color-accent: #FFD600;
   --color-warn: #FF6D00;
-  --color-warn-light: #FFB74D;
+  --color-warn-light: #FF6D0088;
+  --color-warn-very-light: #FF6D0011;
   --color-red: #CB2B39;
 
   --color-gray-1: #101010;
@@ -158,24 +162,17 @@ a {
   color: var(--color-gray-E) !important;
   opacity: 1!important;
 }
+
 .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
   color: var(--color-primary) !important;
 }
-
-// PAGE STYLES
-// .page-title {
-//   padding: 0 0 24px 0;
-//   @media screen and (max-width: 599px) {
-//     padding: 0 0 15px 0;
-//   }
-// }
 
 .page-container-narrow {
   max-width: 800px;
   margin: auto;
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 56px);
   padding: 25px 23px;
   @media screen and (max-width: 599px) {
     width: auto;
@@ -187,12 +184,6 @@ a {
   display: flex;
   flex-direction: column;
   min-height: calc(100vh - 100px);
-  padding: 16px 24px;
-
-  hr {
-    border-top: 1px dashed red;
-  }
-
   @media screen and (max-width: 599px) {
     padding: 0px;
   }

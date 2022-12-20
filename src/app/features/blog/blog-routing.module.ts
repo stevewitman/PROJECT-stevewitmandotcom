@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BlogPageComponent } from './blog-page/blog-page.component';
+
+import { BlogListPageComponent } from './blog-list-page/blog-list-page.component';
+import { BlogDetailPageComponent } from './blog-detail-page/blog-detail-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: BlogPageComponent
-  }
+    component: BlogListPageComponent,
+  },
+  {
+    path: ':id',
+    component: BlogDetailPageComponent,
+  },
 ];
 
 @NgModule({

@@ -2,12 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { BlogRoutingModule } from './blog-routing.module';
-import { BlogPageComponent } from './blog-page/blog-page.component';
+import { BlogListPageComponent } from './blog-list-page/blog-list-page.component';
+import { BlogListComponent } from './blog-list/blog-list.component';
+import { BlogDetailComponent } from './blog-detail/blog-detail.component';
+import { BlogDetailPageComponent } from './blog-detail-page/blog-detail-page.component';
 
 
 @NgModule({
   declarations: [
-    BlogPageComponent
+    BlogListPageComponent,
+    BlogListComponent,
+    BlogDetailComponent,
+    BlogDetailPageComponent
   ],
   imports: [
     CommonModule,
