@@ -1,0 +1,28 @@
+.page-container {
+  display: flex;
+  flex-direction: row;
+}
+.blog-content-container {
+  padding: 23px;
+}
+.editor-and-preview {
+  display: flex;
+  flex-direction: row;
+  max-width: 1680px;
+}
+.editor-pane {
+  display: inline-block;
+  width: 50%;
+  height: calc(100vh - 56px);
+  height: 100%;
+  flex: 1;
+  padding: 25px 23px 0;
+  border-right: 1px solid silver;
+}
+.preview-pane {
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  flex: 1;
+  padding: 25px 23px;
+}

@@ -1,0 +1,14 @@
+.input-and-result {
+  display: flex;
+  flex-direction: row;
+}
+.content-source {
+  flex: 1;
+  border-right: 2px solid silver;
+  min-height: 100vh;
+}
+.content-display {
+  flex: 1;
+  // display: flex;
+  padding: 1rem;
+}

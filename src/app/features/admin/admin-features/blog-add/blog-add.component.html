@@ -1,0 +1,62 @@
+<div class="form-container">
+  <form [formGroup]="blogForm">
+    <div [ngClass]="{'collapse': collapseForm }">
+      <div class="actions-row">
+        <div class="opt-col">
+          <button mat-icon-button color="warn" class="collapse-button" (click)="collapseForm = !collapseForm">
+            <mat-icon *ngIf="!collapseForm">expand_less</mat-icon>
+            <mat-icon *ngIf="collapseForm">expand_more</mat-icon>
+          </button>
+          <!-- <button mat-button>Clear</button> -->
+        </div>
+        <div class="opt-col">
+          <mat-slide-toggle color="warn">Blog</mat-slide-toggle>
+          <mat-slide-toggle color="warn">Public</mat-slide-toggle>
+        </div>
+        <div class="opt-col">
+          <mat-slide-toggle>Archive</mat-slide-toggle>
+          <button mat-raised-button color="warn" class="button-save">Save</button>
+        </div>
+      </div>
+      <mat-form-field class="full" appearance="outline">
+        <mat-label>Title</mat-label>
+        <input type="text" class="input-text" matInput formControlName="title" autocomplete="off" />
+      </mat-form-field>
+
+      <div class="blog-url" *ngIf="blogForm.controls.title.dirty">
+        <span class="blog-url-label">URL: </span>{{ blogForm.controls.title.value }}  
+      </div>
+
+      <mat-form-field class="full" appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea type="text" class="input-text" matInput formControlName="description" autocomplete="off" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" ></textarea>
+      </mat-form-field>
+      
+      <mat-form-field class="full" appearance="outline">
+        <mat-label>Tags</mat-label>
+        <input type="text" class="input-text" matInput formControlName="tags" autocomplete="off" />
+      </mat-form-field>
+      <div class="dates-row">
+        <mat-form-field appearance="outline" class="date-input">
+          <mat-label>Date Created</mat-label>
+          <input type="text" class="input-text" matInput formControlName="created" autocomplete="off" />
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="date-input">
+          <mat-label>Last Updated</mat-label>
+          <input type="text" class="input-text" matInput formControlName="updated" autocomplete="off" />
+        </mat-form-field>
+        <div class="updated-toggle" [hidden]="collapseForm">
+          <mat-slide-toggle color="warn">Updated Today</mat-slide-toggle>
+        </div>
+      </div>
+    </div>
+
+
+
+    <mat-form-field class="full" appearance="outline">
+      <mat-label>Markdown</mat-label>
+      <textarea type="text" class="input-text markdown-text" matInput formControlName="markdown" autocomplete="off"></textarea>
+    </mat-form-field>
+
+  </form>
+</div>

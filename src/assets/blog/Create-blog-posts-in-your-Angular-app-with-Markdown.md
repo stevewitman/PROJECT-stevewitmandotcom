@@ -1,15 +1,21 @@
 ![Avatar](/assets/images/steve-50.png)
 
-
 ###### [Steve Witman](https://stevewitman.com)
 ###### Posted Dec 14, 2022 (revised Dec 17, 2022)
 
+
+
+###### [Markdown](https://stevewitman.com/tags/markdown) <!-- not built yet -->
+###### [Markdown](https://stevewitman.com/tags/markdown) <!-- not built yet -->
+###### [Markdown](https://stevewitman.com/tags/markdown) <!-- not built yet -->
+###### [Markdown](https://stevewitman.com/tags/markdown) <!-- not built yet -->
+###### [Markdown](https://stevewitman.com/tags/markdown) <!-- not built yet -->
+###### [Markdown](https://stevewitman.com/tags/markdown) <!-- not built yet -->
+###### [Markdown](https://stevewitman.com/tags/markdown) <!-- not built yet -->
+
+###### [All Tags](https://stevewitman.com/tags) <!-- not built yet -->
+
 # Create blog posts in your Angular app with Markdown
-
-
-###### [Markdown](https://angular.io)
-
-###### [All Tags](https://angular.io)
 
 > In this post we use the MarkedJS library to convert markdown files to HTML and display in an Angular app.
 
@@ -19,8 +25,10 @@
     
 ## Create a Markdown File
 
-For simplicity sake, in this example we will put a *sample markdown file in the `assets` folder.
+For simplicity sake, in this example we will put a *sample markdown file in the `assets` folder. *Here is some **highlighted** text!*
 
+<!-- You can have comments in the Markdown -->
+<!-- H4 (below) used as the title for a codeblock -->
 #### assets/blogs/sample.md
 
 ```md
@@ -36,7 +44,6 @@ This is a paragraph.
 
 `test`
 ```
-
 
 ## Create Blog Service
 
@@ -138,5 +145,7 @@ JUNK test paragraph
 
 
 ```
-111111111122222222223333333333111111111122222222223333333333
-  ```
+<div class="page-container-narrow" [@pageTransition]>
+  <app-blog-list></app-blog-list>
+</div>
+```

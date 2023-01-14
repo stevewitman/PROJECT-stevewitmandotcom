@@ -48,8 +48,17 @@
         mat-list-item
         (click)="isHandset && drawer.close()"
         routerLinkActive="link-active"
-        [routerLink]="['/admin']"
-        ><span class="list-item">Admin</span></a
+        [routerLink]="['/admin/links']"
+        ><span class="list-item">Admin Links</span></a
+      >
+      <a
+        *ngIf="isAdmin$ | async"
+        class="mat-list-item"
+        mat-list-item
+        (click)="isHandset && drawer.close()"
+        routerLinkActive="link-active"
+        [routerLink]="['/admin/blog']"
+        ><span class="list-item">Admin Blog</span></a
       >
       <mat-divider class="divider-dark" *ngIf="isAdmin$ | async"></mat-divider>
       <a

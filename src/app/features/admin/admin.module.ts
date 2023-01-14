@@ -9,6 +9,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { CoreModule } from 'src/app/core/core.module';
@@ -19,6 +21,8 @@ import { ConsolePageComponent } from './admin-features/console-page/console-page
 import { LinkAddComponent } from './admin-features/link-add/link-add.component';
 import { LinksPageComponent } from './admin-features/links-page/links-page.component';
 import { LinksListComponent } from './admin-features/links-list/links-list.component';
+import { BlogPageComponent } from './admin-features/blog-page/blog-page.component';
+import { BlogAddComponent } from './admin-features/blog-add/blog-add.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +32,8 @@ import { LinksListComponent } from './admin-features/links-list/links-list.compo
     LinkAddComponent,
     LinksPageComponent,
     LinksListComponent,
+    BlogPageComponent,
+    BlogAddComponent,
   ],
   imports: [
     CommonModule,
@@ -41,6 +47,8 @@ import { LinksListComponent } from './admin-features/links-list/links-list.compo
     MatIconModule,
     MatInputModule,
     MatMenuModule,
+    MatRadioModule,
+    MatSlideToggleModule,
     MatToolbarModule,
   ],
 })

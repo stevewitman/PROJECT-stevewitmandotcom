@@ -6,17 +6,12 @@
   // H5 - Terminal commands
   // H6 - Tag
   // *...* - Highlight
-
+  // display: flex;
+  align-items: left;
+  width: 100%;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
   &:first-child {
     color: var(--color-gray-1);
-  }
-
-  img {
-    position: relative;
-    top: -18px;
-    margin-right: 16px;
-    // margin-bottom: 8px;
-    float: left;
   }
 
   h1,
@@ -28,8 +23,7 @@
   p,
   ul,
   pre,
-  blockquote,
-  hr {
+  blockquote {
     margin-top: 0;
     margin-bottom: 24px;
     padding: 0;
@@ -49,7 +43,7 @@
 
   h1 {
     font-size: 40px;
-    // color: var(--color-warn);
+    line-height: 48px;
     letter-spacing: 1px;
     font-weight: 500;
   }
@@ -107,7 +101,14 @@
     padding: 20px;
     border-radius: 6px;
     background-color: var(--color-gray-4);
-    color: white;
+    color: #77F94E;
+    em {
+      font-style: normal;
+      padding: 0 3px 1px 3px;
+      border-radius: 3px;
+      background-color: #77F94E;
+      color: black;
+    }
 
     &:before {
       color: #77F94E;
@@ -118,79 +119,17 @@
   }
 
   h6 {
-    // Tags
-    display: inline-block;
+    // using for file names on code blocks
     font-size: 16px;
     font-weight: 400;
-    line-height: 30px;
-    padding: 3px 18px;
-    border-radius: 18px;
-    background-color: var(--color-warn);
+    line-height: 32px;
+    padding: 6px 20px;
+    border-radius: 6px 6px 0 0;
+    background-color: var(--color-gray-A);
     color: white;
-    margin: 0px 3px 12px 3px;
-
-    a {
-      color: white;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-
-    &:first-of-type {
-      // Author name
-      display: block;
-      position: relative;
-      top: -13px;
-      font-size: 20px;
-      font-weight: 500;
-      line-height: 20px;
-      letter-spacing: 1px;
-      padding: 0;
-      margin: 0;
-      border-radius: 0;
-      background-color: transparent;
-
-      a {
-        color: var(--color-primary);
-        // &:hover {
-        //   text-decoration: underline;
-        // } 
-      }
-    }
-
-    &:nth-of-type(2) {
-      // Date posted
-      display: block;
-      position: relative;
-      top: -15px;
-      font-size: 16px;
-      line-height: 30px;
-      padding: 0;
-      margin: 0;
-      border-radius: 0;
-      background-color: transparent;
-      color: var(--color-gray-A);
-    }
-
-    &:last-of-type {
-      // "All Tags" link
-      background-color: var(--color-primary-light);
-      color: #404040;
-      margin-bottom: 30px;
-    }
+    margin-bottom: 0;
   }
 
-  // h6>a {
-  //   color: white;
-  //   &:first-of-type {
-  //     color: var(--color-primary);
-  //   }
-  //   &:hover {
-  //     text-decoration: underline;
-  //   }
-
-  // }
   p {
     font-size: 16px;
     font-weight: 400;
@@ -203,7 +142,7 @@
       letter-spacing: 0.5px;
       padding: 6px;
       border-radius: 5px;
-      background-color: var(--color-gray-F);
+      background-color: #f0f0f0;
       color: var(--color-primary);
     }
   }
@@ -250,7 +189,8 @@
   }
 
   hr {
-    margin-top: 24px;
-    border-top: 1px solid var(--color-gray-C);
+    padding: 0;
+    margin: 40px 0;
+    border-top: 0.5px solid var(--color-gray-C);
   }
 }

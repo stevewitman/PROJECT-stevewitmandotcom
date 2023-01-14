@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { BlogListPageComponent } from './blog-list-page/blog-list-page.component';
 import { BlogDetailPageComponent } from './blog-detail-page/blog-detail-page.component';
+import { BlogEditPageComponent } from './blog-edit-page/blog-edit-page.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,11 @@ const routes: Routes = [
     path: ':id',
     component: BlogDetailPageComponent,
   },
+  {
+    path: 'edit/:id',
+    component: BlogEditPageComponent
+  }
+
 ];
 
 @NgModule({
