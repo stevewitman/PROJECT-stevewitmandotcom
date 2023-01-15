@@ -1,4 +1,20 @@
-.markdown {
+  .blog-title {
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+  }
+
+  .blog-description {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+  }
+
+  .markdown {
   // H1 - Title
   // H2 - Heading
   // H3 - Sub-Heading
@@ -10,9 +26,10 @@
   align-items: left;
   width: 100%;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
-  &:first-child {
-    color: var(--color-gray-1);
-  }
+  // &:first-child {
+  //   color: var(--color-gray-1);
+  //   color: red;
+  // }
 
   h1,
   h2,

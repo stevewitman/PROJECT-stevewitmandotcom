@@ -9,8 +9,6 @@ import { BlogListPageComponent } from './blog-list-page/blog-list-page.component
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { BlogDetailPageComponent } from './blog-detail-page/blog-detail-page.component';
-import { BlogEditComponent } from './blog-edit/blog-edit.component';
-import { BlogEditPageComponent } from './blog-edit-page/blog-edit-page.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +16,6 @@ import { BlogEditPageComponent } from './blog-edit-page/blog-edit-page.component
     BlogListComponent,
     BlogDetailComponent,
     BlogDetailPageComponent,
-    BlogEditComponent,
-    BlogEditPageComponent,
   ],
   imports: [
     CommonModule,
@@ -27,5 +23,6 @@ import { BlogEditPageComponent } from './blog-edit-page/blog-edit-page.component
     BlogRoutingModule,
     MatInputModule,
   ],
+  exports: [BlogDetailComponent],
 })
 export class BlogModule {}

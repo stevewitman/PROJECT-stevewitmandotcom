@@ -21,9 +21,10 @@
 <div class="page-container">
 
   <div class="editor-pane">
-    <app-blog-add></app-blog-add>
+    <app-admin-blog-edit></app-admin-blog-edit>
   </div>
   <div class="preview-pane">
+    <app-blog-detail [blogHTML$]="blogHTML$"></app-blog-detail>
   </div>
   
 </div>

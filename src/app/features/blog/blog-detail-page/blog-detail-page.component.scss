@@ -1,14 +1,6 @@
 .section-header {
-
-    display: flex;
-    justify-content: center;
-
-
-
-}
-.section-text {
-  // display: block;
-
+  display: flex;
+  justify-content: center;
 }
 
 .content-and-sidebar {
@@ -18,7 +10,6 @@
 }
 
 .content {
-  // display: inline-block;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -27,7 +18,7 @@
   padding: 25px 23px;
 }
 
-.narrow {
+.narrow { 
   width: 100%;
   max-width: 800px;
 }
@@ -35,7 +26,7 @@
 .content-sidebar-right {
   display: inline-block;
   flex-direction: column;
-  max-width: 550px;
+  max-width: 600px;
   align-items: top;
   min-height: 100%;
   background-color: var(--color-gray-F);

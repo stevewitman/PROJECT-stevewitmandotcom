@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BlogEditPageComponent } from './blog-edit-page.component';
+import { AdminBlogEditComponent } from './admin-blog-edit.component';
 
-describe('BlogEditPageComponent', () => {
-  let component: BlogEditPageComponent;
-  let fixture: ComponentFixture<BlogEditPageComponent>;
+describe('AdminBlogEditComponent', () => {
+  let component: AdminBlogEditComponent;
+  let fixture: ComponentFixture<AdminBlogEditComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BlogEditPageComponent ]
+      declarations: [ AdminBlogEditComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BlogEditPageComponent);
+    fixture = TestBed.createComponent(AdminBlogEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

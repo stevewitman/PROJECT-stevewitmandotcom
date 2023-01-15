@@ -21,8 +21,11 @@ import { ConsolePageComponent } from './admin-features/console-page/console-page
 import { LinkAddComponent } from './admin-features/link-add/link-add.component';
 import { LinksPageComponent } from './admin-features/links-page/links-page.component';
 import { LinksListComponent } from './admin-features/links-list/links-list.component';
-import { BlogPageComponent } from './admin-features/blog-page/blog-page.component';
-import { BlogAddComponent } from './admin-features/blog-add/blog-add.component';
+import { AdminBlogPageComponent } from './admin-features/admin-blog-page/admin-blog-page.component';
+import { AdminBlogEditComponent } from './admin-features/admin-blog-edit/admin-blog-edit.component';
+import { BlogModule } from '../blog/blog.module';
+import { AdminBlogListPageComponent } from './admin-features/admin-blog-list-page/admin-blog-list-page.component';
+import { AdminBlogListComponent } from './admin-features/admin-blog-list/admin-blog-list.component';
 
 @NgModule({
   declarations: [
@@ -32,14 +35,17 @@ import { BlogAddComponent } from './admin-features/blog-add/blog-add.component';
     LinkAddComponent,
     LinksPageComponent,
     LinksListComponent,
-    BlogPageComponent,
-    BlogAddComponent,
+    AdminBlogPageComponent,
+    AdminBlogEditComponent,
+    AdminBlogListPageComponent,
+    AdminBlogListComponent,
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     CoreModule,
     AdminRoutingModule,
+    BlogModule,
     MatButtonModule,
     MatCheckboxModule,
     MatDividerModule,

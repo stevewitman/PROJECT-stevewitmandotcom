@@ -13,6 +13,10 @@ import { MarkdownService } from '../services/markdown.service';
 })
 export class BlogDetailComponent implements OnInit {
   @Input() blogHTML$: Observable<string> = of('');
+  title = 'Build Your Own Blog On Your Angular Site';
+  description =
+    'This is a work-in-progress, a small sample of the workshop/tutorial and has not been shared publicly. If selected I will make it private until the conf and at that time, if desired, only be made available to attendees for some period of time before posting publicly (it will always be free content)';
+  type = 'blog';
 
   // blogMarkdown$: Observable<string> = of('');
   // blogHTML$: Observable<string> = of('');

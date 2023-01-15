@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AdminPageComponent } from './admin-features/admin-page/admin-page.component'
-import { BlogPageComponent } from './admin-features/blog-page/blog-page.component';
 import { ConsolePageComponent } from './admin-features/console-page/console-page.component';
+import { AdminPageComponent } from './admin-features/admin-page/admin-page.component'
+import { AdminBlogListPageComponent } from './admin-features/admin-blog-list-page/admin-blog-list-page.component';
+import { AdminBlogPageComponent } from './admin-features/admin-blog-page/admin-blog-page.component';
 import { LinksPageComponent } from './admin-features/links-page/links-page.component';
 
 const routes: Routes = [
@@ -21,7 +22,11 @@ const routes: Routes = [
       },
       {
         path: 'blog',
-        component: BlogPageComponent,
+        component: AdminBlogListPageComponent,
+      },
+      {
+        path: 'blog/:id',
+        component: AdminBlogPageComponent,
       },
     ],
   },

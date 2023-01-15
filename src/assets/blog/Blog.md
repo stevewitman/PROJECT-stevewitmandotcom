@@ -1,8 +1,4 @@
-# Build Your Own Blog On Your Angular Site
-
-### *This is a work-in-progress, a small sample of the workshop/tutorial and has not been shared publicly. If selected I will make it private until the conf and at that time, if desired, only be made available to attendees for some period of time before posting publicly (it will always be free content)*
-
-## 0. Workshop Introduction
+## Workshop Introduction
 
 ### Introduction
 

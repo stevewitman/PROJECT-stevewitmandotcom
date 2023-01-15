@@ -1,3 +1,7 @@
 <div class="blog-container">
+  <h2 *ngIf="type === 'blog'">Blog Post</h2>
+  <h2 *ngIf="type === 'note'">Dev Note</h2>
+  <h1 class="blog-title">{{ title }}</h1>
+  <p class="blog-description">{{ description }}</p>
   <div class="markdown" [innerHTML]="blogHTML$ | async"></div>
 </div>

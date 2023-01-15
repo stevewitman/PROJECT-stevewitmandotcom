@@ -3,9 +3,9 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { trigger, style, animate, transition } from '@angular/animations';
 
 @Component({
-  selector: 'app-blog-add',
-  templateUrl: './blog-add.component.html',
-  styleUrls: ['./blog-add.component.scss'],
+  selector: 'app-admin-blog-edit',
+  templateUrl: './admin-blog-edit.component.html',
+  styleUrls: ['./admin-blog-edit.component.scss'],
   animations: [
     trigger('inOutAnimation', [
       transition(':enter', [
@@ -19,18 +19,21 @@ import { trigger, style, animate, transition } from '@angular/animations';
     ]),
   ],
 })
-export class BlogAddComponent implements OnInit {
+export class AdminBlogEditComponent implements OnInit {
   private currentDate = new Date();
   collapseForm = false;
   
   blogForm = new FormGroup({
     title: new FormControl(''),
-    slug: new FormControl(''),
+    description: new FormControl(''),
+    tags: new FormControl(['']),
     author: new FormControl('Steve Witman'),
-    dateCreated: new FormControl('Steve Witman'),
-    active: new FormControl(false),
+    created: new FormControl(''),
+    updated: new FormControl(''),
+    blog: new FormControl(false),
     public: new FormControl(false),
-    show: new FormControl(false),
+    archive: new FormControl(false),
+    markdown: new FormControl(''),
   });
 
   // constructor(private blogService: BlogService) {}
