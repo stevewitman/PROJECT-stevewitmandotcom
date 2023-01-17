@@ -1,4 +1,4 @@
-<div class="page-container-wide" [@pageTransition]>
+<div class="page-container-narrow">
   <div class="content-and-sidebar">
     <div class="content">
       <div class="narrow">
@@ -6,7 +6,35 @@
       </div>
     </div>
     <div class="content-sidebar-right">
-      <app-admin-blog-list></app-admin-blog-list>
+      <h2>Blog Posts<span class="spaced">/</span>Notes</h2>
+      <div class="actions">
+        <form [formGroup]="listFilterForm">
+          <div class="left-col">
+            <!-- <mat-checkbox class="options" color="warn" formControlName="showBlogPosts" [(ngModel)]="blogsFilterToggle">Blog Posts</mat-checkbox>
+            <mat-checkbox class="options" color="warn" formControlName="showDevNotes" [(ngModel)]="notesFilterToggle">Dev Notes</mat-checkbox> -->
+            <mat-button-toggle-group formControlName="postTypeCtrl">
+              <mat-button-toggle value="showBlogPosts">Blog Posts</mat-button-toggle>
+              <mat-button-toggle value="showDevNotes">Dev Notes</mat-button-toggle>
+              <mat-button-toggle value="showAll">All</mat-button-toggle>
+            </mat-button-toggle-group>
+            <mat-checkbox class="options" color="warn" formControlName="showDescriptions" [(ngModel)]="descriptionFilterToggle">Descriptions</mat-checkbox>
+            <mat-checkbox class="options" color="warn" formControlName="showTags" [(ngModel)]="tagsFilterToggle">Tags</mat-checkbox>
+          </div>
+        </form>
+        <pre>
+        </pre>
+        <div class="right-col">
+          <!-- <button mat-button color="warn">
+            <mat-icon>search</mat-icon>
+          </button> -->
+          <button mat-raised-button color="warn" class="new-post-button">New</button>
+        </div>
+      </div>
+      <!-- {{ listFilterForm | json }} -->
+      <ng-container *ngFor="let item of blogList">
+        <app-admin-blog-list [item]="item" [listFilterForm]="listFilterForm"></app-admin-blog-list>
+      </ng-container>
     </div>
   </div>
 </div>
+
