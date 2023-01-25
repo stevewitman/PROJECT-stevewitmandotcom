@@ -1,0 +1,13 @@
+.header-with-button {
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  width: 840px;
+}
+
+.resume-download-button {
+  position: relative;
+  top: 10px;
+  background-color: var(--color-warn);
+  color: #FFFFFF
+}

@@ -1,20 +1,20 @@
-<div class="blog-item" (click)="itemClicked(item)" *ngIf="
+<div class="blog-item" (click)="itemSelected(item)" *ngIf="
   ((listFilterForm.controls.postTypeCtrl.value === 'showBlogPosts') && item.blog) || ((listFilterForm.controls.postTypeCtrl.value === 'showDevNotes') && !item.blog) ||
   (listFilterForm.controls.postTypeCtrl.value === 'showAll')
   ">
   <div class="blog-dates">
-    <span *ngIf="item.blog" class="blog-type-blog">BLOG POST </span>
-    <span *ngIf="!item.blog" class="blog-type-note">DEV NOTE </span>
-    <span class="blog-date"> - {{ item.created | date }}</span>
-    <span class="blog-date" *ngIf="item.updated"> (Updated: {{ item.updated  | date }})</span>
+    <div class="col-left">
+      <span *ngIf="item.blog" class="blog-type-blog">BLOG POST </span>
+      <span *ngIf="!item.blog" class="blog-type-note">DEV NOTE </span>
+      <span class="blog-date"> - {{ item.created | date }}</span>
+      <span class="blog-date" *ngIf="item.updated"> (Updated: {{ item.updated  | date }})</span>
+    </div>
   </div>
   <div class="blog-title">{{ item.title }}</div>
   <div class="blog-details" *ngIf="listFilterForm.controls.showDescriptions.value">
     <span class="blog-description">{{ item.description }}</span>
   </div>
   <div class="blog-tags" *ngIf="listFilterForm.controls.showTags.value">
-    <mat-chip-list>
-      <mat-chip *ngFor="let tag of item.tags" class="chips">{{ tag }}</mat-chip>
-    </mat-chip-list>
+    <div class="chip" *ngFor="let tag of item.tags">{{ tag }}</div>
   </div>
 </div>

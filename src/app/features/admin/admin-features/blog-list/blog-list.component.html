@@ -1,0 +1,23 @@
+<h2>Blog Posts<span class="spaced">/</span>Notes</h2>
+<div class="actions">
+  <form [formGroup]="listFilterForm">
+    <div class="col-left">
+      <mat-button-toggle-group formControlName="postTypeCtrl">
+        <mat-button-toggle value="showBlogPosts">Blog Posts</mat-button-toggle>
+        <mat-button-toggle value="showDevNotes">Dev Notes</mat-button-toggle>
+        <mat-button-toggle value="showAll">All</mat-button-toggle>
+      </mat-button-toggle-group>
+      <mat-checkbox class="options" color="warn" formControlName="showDescriptions" [(ngModel)]="descriptionFilterToggle">Descriptions</mat-checkbox>
+      <mat-checkbox class="options" color="warn" formControlName="showTags" [(ngModel)]="tagsFilterToggle">Tags</mat-checkbox>
+    </div>
+  </form>
+  <div class="col-right">
+    <button mat-raised-button color="warn" class="new-post-button" (click)="newPost()">New</button>
+  </div>
+</div>
+<ng-container *ngFor="let item of blogList">
+  <app-admin-blog-list [item]="item" [listFilterForm]="listFilterForm" (itemSelectedEvent)="itemSelected(item)"></app-admin-blog-list>
+</ng-container>
+
+
+

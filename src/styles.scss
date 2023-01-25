@@ -180,6 +180,11 @@ a {
   }
 }
 
+.page-container-dark {
+  width: 100%;
+  background-color: var(--color-gray-F);
+}
+
 .page-container-wide {
   display: flex;
   flex-direction: column;

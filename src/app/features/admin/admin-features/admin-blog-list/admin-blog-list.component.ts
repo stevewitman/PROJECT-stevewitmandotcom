@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
 import { BlogAndNote } from '../../admin-models/blog-and-note';
 
 @Component({
@@ -9,13 +10,14 @@ import { BlogAndNote } from '../../admin-models/blog-and-note';
 export class AdminBlogListComponent implements OnInit {
   @Input() item!: BlogAndNote;
   @Input() listFilterForm: any;
+  @Output() itemSelectedEvent = new EventEmitter<BlogAndNote>();
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  itemClicked(item: BlogAndNote) {
-    console.log('CLICKED:', item);
+  itemSelected(item: BlogAndNote) {
+    this.itemSelectedEvent.emit(item);
   }
 }
   

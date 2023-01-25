@@ -1,3 +1,13 @@
-<div class="page-container-narrow" [@pageTransition]>
-  <h2>Resume</h2>
+<div class="page-container-dark">
+  <div class="page-container-narrow page-container-dark" [@pageTransition]>
+    <div class="header-with-button">
+      <h2>Resume</h2>
+      <a href="assets/pdfs/steve-witman-resume.pdf" target="_blank">
+        <button mat-raised-button class="resume-download-button">
+          Download PDF
+        </button>
+      </a>
+    </div>
+    <app-resume></app-resume>
+  </div>
 </div>

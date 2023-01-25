@@ -5,7 +5,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatChipsModule } from '@angular/material/chips';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -29,6 +28,7 @@ import { AdminBlogEditComponent } from './admin-features/admin-blog-edit/admin-b
 import { BlogModule } from '../blog/blog.module';
 import { AdminBlogListPageComponent } from './admin-features/admin-blog-list-page/admin-blog-list-page.component';
 import { AdminBlogListComponent } from './admin-features/admin-blog-list/admin-blog-list.component';
+import { BlogListComponent } from './admin-features/blog-list/blog-list.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +42,7 @@ import { AdminBlogListComponent } from './admin-features/admin-blog-list/admin-b
     AdminBlogEditComponent,
     AdminBlogListPageComponent,
     AdminBlogListComponent,
+    BlogListComponent,
   ],
   imports: [
     CommonModule,
@@ -52,7 +53,6 @@ import { AdminBlogListComponent } from './admin-features/admin-blog-list/admin-b
     MatButtonModule,
     MatButtonToggleModule,
     MatCheckboxModule,
-    MatChipsModule,
     MatDividerModule,
     MatFormFieldModule,
     MatIconModule,

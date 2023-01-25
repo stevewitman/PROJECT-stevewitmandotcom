@@ -55,12 +55,12 @@
   <!-- PROJECTS SECTION -->
   <section class="section section-dark">
     <h2 class="section-title">Projects</h2>
-    <div class="container-flex-2">
+    <div class="container-flex">
       <a href="https://ngnuggets.com">
         <mat-card class="summary-card card-dark">
           <h3 class="card-title">Latest Angular Blogs & Videos</h3>
           <h4 class="card-subtitle">
-            ngnuggets.com <span class="accent">(MVP Aug 31, 2022)</span>
+            ngnuggets.com <span class="accent">(Personal Project)</span>
           </h4>
           <img class="card-image" src="assets/images/PROJ-ngnuggetsdotcom.png" />
         </mat-card>
@@ -70,6 +70,13 @@
         <h4 class="card-subtitle">stevewitman.com</h4>
         <img class="card-image" src="assets/images/PROJ-stevewitmandotcom.png" />
       </mat-card>
+      <a href="https://web.archive.org/web/20020204120107/http://www.maisondeski.com/reserve.html">
+        <mat-card class="summary-card card-dark">
+          <h3 class="card-title">My FIRST Website 2000-2008</h3>
+          <h4 class="card-subtitle">maisondeski.com</h4>
+          <img class="card-image" src="assets/images/PROJ-maisondeski.png" />
+        </mat-card>
+      </a>
     </div>
   </section>
   <!-- <section class="section section-light">
@@ -305,8 +312,8 @@
   <!-- <section class="section section-light">
     <h2 class="section-title">Contact</h2>
   </section> -->
-  <section class="section section-dark" #resume>
+  <section class="section" #resume>
     <h2 class="section-title">Resume</h2>
-    <app-resume></app-resume>
+    <button [routerLink]="['/resume']" mat-raised-button class="resume-download-button">View or Download Resume (PDF)</button>
   </section>
 </div>

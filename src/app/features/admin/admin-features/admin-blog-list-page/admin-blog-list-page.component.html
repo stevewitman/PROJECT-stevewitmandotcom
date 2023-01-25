@@ -6,12 +6,11 @@
       </div>
     </div>
     <div class="content-sidebar-right">
-      <h2>Blog Posts<span class="spaced">/</span>Notes</h2>
+      <app-blog-list [blogList]="blogList" (newPostEvent)="newPostEvent()" (itemSelectedEvent)="itemSelected($event)"></app-blog-list>
+      <!-- <h2>Blog Posts<span class="spaced">/</span>Notes</h2>
       <div class="actions">
         <form [formGroup]="listFilterForm">
-          <div class="left-col">
-            <!-- <mat-checkbox class="options" color="warn" formControlName="showBlogPosts" [(ngModel)]="blogsFilterToggle">Blog Posts</mat-checkbox>
-            <mat-checkbox class="options" color="warn" formControlName="showDevNotes" [(ngModel)]="notesFilterToggle">Dev Notes</mat-checkbox> -->
+          <div class="col-left">
             <mat-button-toggle-group formControlName="postTypeCtrl">
               <mat-button-toggle value="showBlogPosts">Blog Posts</mat-button-toggle>
               <mat-button-toggle value="showDevNotes">Dev Notes</mat-button-toggle>
@@ -23,17 +22,13 @@
         </form>
         <pre>
         </pre>
-        <div class="right-col">
-          <!-- <button mat-button color="warn">
-            <mat-icon>search</mat-icon>
-          </button> -->
+        <div class="col-right">
           <button mat-raised-button color="warn" class="new-post-button">New</button>
         </div>
       </div>
-      <!-- {{ listFilterForm | json }} -->
       <ng-container *ngFor="let item of blogList">
         <app-admin-blog-list [item]="item" [listFilterForm]="listFilterForm"></app-admin-blog-list>
-      </ng-container>
+      </ng-container> -->
     </div>
   </div>
 </div>
